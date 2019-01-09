@@ -131,8 +131,8 @@ msgstr "Copia de seguridad realizada"
 msgid "Backup location"
 msgstr "Ubicación de las copias de seguridad"
 
-msgid "backup-manager"
-msgstr "administrador de copias de seguridad"
+msgid "Backup manager"
+msgstr "Administrador de copias de seguridad"
 
 msgid "Backup manager Log"
 msgstr "Historial de copias de seguridad"
@@ -291,11 +291,11 @@ msgstr "GB"
 msgid "HARD DISK: "
 msgstr "DISCO DURO:"
 
-msgid "ipkg-install"
-msgstr "Instalador de IPKs"
+msgid "Image manager"
+msgstr "Administrador de Imagen"
 
-msgid "image-manager"
-msgstr "administrador de Image"
+msgid "IPK installer"
+msgstr "IPK instalar"
 
 msgid "Image manager Setup"
 msgstr "Configuración del administrador de Imagen"
@@ -316,7 +316,7 @@ msgid "Install IPK's from your tmp folder."
 msgstr "Instalar IPKs de la carpeta /tmp."
 
 msgid "Install extensions."
-msgstr ""
+msgstr "Instalar extensiones."
 
 msgid "Install local extension"
 msgstr "Instalar extensión local"
@@ -366,8 +366,8 @@ msgstr "Montar"
 msgid "Un-mount"
 msgstr "Desmontar"
 
-msgid "mount-manager"
-msgstr "administrador de montajes"
+msgid "Mount manager"
+msgstr "Administrador de montajes"
 
 msgid "Mount failed"
 msgstr "Montaje fallido"
@@ -527,8 +527,8 @@ msgstr "Guardar"
 msgid "Schedule backups"
 msgstr "Programar copias de seguridad"
 
-msgid "script-runner"
-msgstr "administrador de scripts"
+msgid "Script runner"
+msgstr "Administrador de scripts"
 
 msgid "Script Runner Setup"
 msgstr ""
@@ -645,8 +645,8 @@ msgstr "Detener"
 msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Archivo de intercambio no encontrado. Hay que crearlo antes de activarlo."
 
-msgid "swap-manager"
-msgstr "administrador swap"
+msgid "Swap manager"
+msgstr "Administrador swap"
 
 msgid "SWAP place:"
 msgstr "Destino SWAP:"

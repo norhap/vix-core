@@ -67,16 +67,19 @@ msgid "Allows the softcam to be checked if it stopped working, and restarted aut
 msgstr "Permite detectar si el softcam ya no funciona y lo reinicia si hace falta."
 
 msgid "Allows you have the window close automatically."
-msgstr ""
+msgstr "Permite que la ventana se cierre automáticamente."
 
-msgid "Allows you schedule your backups."
+msgid "Allows you to close the window close automatically."
+msgstr "Le permite cerrar la ventana cerrar automáticamente."
+
+msgid "Allows you to schedule your backups."
 msgstr "Permite programar copias de seguridad."
 
-msgid "Allows you schedule your image backups."
+msgid "Allows you to schedule your image backups."
 msgstr "Te permite programar copias de imágenes."
 
-msgid "Allows you to tag your backups to a box. (default is box name/type)"
-msgstr "Permite nombrar tus copias de seguridad (por defecto es nombre/tipo de receptor)"
+msgid "Allows you to tag your backups to a box."
+msgstr "Permite nombrar tus copias de seguridad a un receptor."
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
 msgstr "Permite nombrar tus copias de seguridad de imágenes (por defecto es nombre/tipo de receptor)"
@@ -190,7 +193,7 @@ msgid "Close"
 msgstr "Cerrar"
 
 msgid "Close window on success"
-msgstr "Cerrar ventana al éxito"
+msgstr "Cerrar ventana en éxito"
 
 msgid "Comparing against backup..."
 msgstr "Comparando con la copia de seguridad..."
@@ -336,8 +339,8 @@ msgstr "No has configurado un destion adicional. Elige uno en el menú del admin
 msgid "Location of where backup should be saved."
 msgstr "Destino de las grabaciones de copias de seguridad"
 
-msgid "Location of where image backup should be saved."
-msgstr "Destino de las grabaciones de copias de imagen"
+msgid "Location of where the image backup should be saved."
+msgstr "Ubicación donde debe guardar la copia de seguridad de imagen."
 
 msgid "MB"
 msgstr "MB"
@@ -359,6 +362,9 @@ msgstr "Gestiona sus dispositivos puntos de montaje."
 
 msgid "Create and Manage your SWAP files."
 msgstr "Crea y administra sus archivos SWAP."
+
+msgid "Create a settings backup before updating."
+msgstr "Crear una copia antes de actualizar."
 
 msgid "Mount"
 msgstr "Montar"
@@ -478,8 +484,8 @@ msgstr ""
 msgid "Rebooting..."
 msgstr "Reiniciando..."
 
-msgid "Remove Confirmation"
-msgstr "Suprimir confirmación"
+msgid "Remove confirmation"
+msgstr "Confirmar borrar"
 
 msgid "Removing temp mounts..."
 msgstr "Quitando montajes temporales"
@@ -494,16 +500,16 @@ msgstr "Reiniciar"
 msgid "Restart %s %s."
 msgstr ""
 
-msgid "Restart Enigma2."
+msgid "Restart enigma2."
 msgstr "Reiniciar Enigma2"
 
 msgid "Restore"
 msgstr "Restaurar"
 
-msgid "Restore Confirmation"
+msgid "Restore confirmation"
 msgstr "Confirmación de restaurar"
 
-msgid "Restore Wizard"
+msgid "Restore wizard"
 msgstr "Asistente de restauración"
 
 msgid "Restoring backup..."
@@ -547,6 +553,9 @@ msgstr "Selecciona la imagen que quieres descargar:"
 
 msgid "Select an image to restore:"
 msgstr "Seleccione la imagen a restaurar:"
+
+msgid "Select an image to flash:"
+msgstr "Seleccione la imagen para flash:"
 
 msgid "Select extra packages folder"
 msgstr "Elige una carpeta para paquetes adicionales"
@@ -804,5 +813,11 @@ msgstr "no disponible"
 
 msgid "Include machine name in backup name"
 msgstr "Incluir el nombre de la máquina en el nombre de la copia de seguridad"
+
+msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
+msgstr "El nombre del receptor se puede incluir en el nombre del archivo de respaldo, pero hace que el nombre del archivo sea largo."
+
+msgid "Manage the backups of your settings."
+msgstr "Gestiona las copias de seguridad de tu configuración."
 
 

@@ -349,7 +349,16 @@ msgid "Manage you devices mountpoints."
 msgstr "Administrar los puntos de montaje de tus dispositivos."
 
 msgid "Manage your backups of your settings."
-msgstr "Administrar tus copias de seguridad de configuración."
+msgstr "Administrar tus copias de configuración."
+
+msgid "Create and flash complete images of your system."
+msgstr "Crea y flashea imágenes completas de su sistema."
+
+msgid "Manage your devices mount points."
+msgstr "Gestiona sus dispositivos puntos de montaje."
+
+msgid "Create and Manage your SWAP files."
+msgstr "Crea y administra sus archivos SWAP."
 
 msgid "Mount"
 msgstr "Montar"
@@ -378,7 +387,7 @@ msgstr "No restaurar la configuración"
 msgid "New backup"
 msgstr "Nueva copia de seguridad"
 
-msgid "Next Backup: "
+msgid "Next backup: "
 msgstr "Próxima copia de seguridad:"
 
 msgid ""

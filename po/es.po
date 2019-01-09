@@ -352,7 +352,10 @@ msgid "Manage your backups of your settings."
 msgstr "Administrar tus copias de seguridad de configuración."
 
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
+
+msgid "Un-mount"
+msgstr "Desmontar"
 
 msgid "Mount manager"
 msgstr "Administrador de montajes"
@@ -563,7 +566,7 @@ msgstr "Elige la hora de la copia de seguridad."
 msgid "Setting Up..."
 msgstr "Configurando..."
 
-msgid "Setup Mounts"
+msgid "Setup mounts"
 msgstr "Configurar montajes"
 
 msgid "Show in extensions"

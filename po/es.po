@@ -119,25 +119,25 @@ msgstr "Autoinicio"
 msgid "Backing up files..."
 msgstr "Copiando archivos..."
 
-msgid "Backup Complete..."
+msgid "Backup complete..."
 msgstr "Copia de seguridad terminada..."
 
-msgid "Backup Confirmation"
+msgid "Backup confirmation"
 msgstr "Confirmación de copia de seguridad"
 
-msgid "Backup Created"
+msgid "Backup created"
 msgstr "Copia de seguridad realizada"
 
-msgid "Backup Location"
-msgstr "Destino de las copias de seguridad"
+msgid "Backup location"
+msgstr "Ubicación de las copias de seguridad"
 
-msgid "Backup Manager"
+msgid "Backup manager"
 msgstr "Administrador de copias de seguridad"
 
-msgid "Backup Manager Log"
+msgid "Backup manager Log"
 msgstr "Historial de copias de seguridad"
 
-msgid "Backup Manager Setup"
+msgid "Backup manager Setup"
 msgstr "Configuración del administrador de copias de seguridad"
 
 msgid "Backup failed - e. g. wrong backup destination or no space left on backup device"
@@ -177,11 +177,11 @@ msgstr "Comprobando RAM libre..."
 msgid "Checking softcams..."
 msgstr "Comprobando softcams..."
 
-msgid "Choose Files"
+msgid "Choose files"
 msgstr "Elegir archivos"
 
-msgid "Choose local ipk's folder"
-msgstr "Elegir la carpeta ipk local"
+msgid "Choose local IPK's folder"
+msgstr "Elegir carpeta local IPK"
 
 msgid "Choose where to mount your devices to:"
 msgstr "Elegir dónde montar tus dispositivos:"
@@ -190,7 +190,7 @@ msgid "Close"
 msgstr "Cerrar"
 
 msgid "Close window on success"
-msgstr ""
+msgstr "Cerrar ventana al éxito"
 
 msgid "Comparing against backup..."
 msgstr "Comparando con la copia de seguridad..."
@@ -258,14 +258,14 @@ msgstr "Descargando Image..."
 msgid "Downloads"
 msgstr "Descargas"
 
-msgid "Enable Startup"
-msgstr "Habilitar el inicio"
+msgid "Enable startup"
+msgstr "Habilitar al iniciar"
 
-msgid "Enable Swap at startup"
-msgstr "Habilitar el intercambio en inicio"
+msgid "Enable SWAP at startup"
+msgstr "Habilitar SWAP al iniciar sistema"
 
 msgid "Enable frozen check"
-msgstr ""
+msgstr "Activar comprobar softcam"
 
 msgid "Enough Retries, delaying till next schedule."
 msgstr "Suficientes reintentos. Se eperará hasta la proxima programación."
@@ -294,11 +294,11 @@ msgstr "DISCO DURO:"
 msgid "IPK Installer"
 msgstr "Instalador de IPKs"
 
-msgid "Image Manager"
+msgid "Image manager"
 msgstr "Administrador de Image"
 
-msgid "Image Manager Setup"
-msgstr "Configuración del administrador de Image"
+msgid "Image manager Setup"
+msgstr "Configuración del administrador de Imagen"
 
 msgid "Inactive"
 msgstr "Inactivo"
@@ -325,7 +325,7 @@ msgid "Installing..."
 msgstr "Instalando..."
 
 msgid "Invert"
-msgstr ""
+msgstr "Invertir"
 
 msgid "Ipkg"
 msgstr ""
@@ -354,7 +354,7 @@ msgstr "Administrar tus copias de seguridad de configuración."
 msgid "Mount"
 msgstr ""
 
-msgid "Mount Manager"
+msgid "Mount manager"
 msgstr "Administrador de montajes"
 
 msgid "Mount failed"
@@ -372,7 +372,7 @@ msgstr "No restaurar complementos"
 msgid "NO, do not restore settings"
 msgstr "No restaurar la configuración"
 
-msgid "New Backup"
+msgid "New backup"
 msgstr "Nueva copia de seguridad"
 
 msgid "Next Backup: "
@@ -512,10 +512,10 @@ msgstr "Ejecutar scripts de shell."
 msgid "Save"
 msgstr "Guardar"
 
-msgid "Schedule Backups"
+msgid "Schedule backups"
 msgstr "Programar copias de seguridad"
 
-msgid "Script Runner"
+msgid "Script runner"
 msgstr "Administrador de scripts"
 
 msgid "Script Runner Setup"
@@ -524,17 +524,17 @@ msgstr ""
 msgid "Select"
 msgstr "Seleccionar"
 
-msgid "Select a backup to Restore:"
-msgstr ""
+msgid "Select a backup to restore:"
+msgstr "Seleccione la copia a restaurar:"
 
 msgid "Select a package to install:"
 msgstr "Selecciona el IPK que quieres instalar:"
 
-msgid "Select an image to Download:"
+msgid "Select an image to download:"
 msgstr "Selecciona la imagen que quieres descargar:"
 
 msgid "Select an image to restore:"
-msgstr ""
+msgstr "Seleccione la imagen a restaurar:"
 
 msgid "Select extra packages folder"
 msgstr "Elige una carpeta para paquetes adicionales"
@@ -567,18 +567,18 @@ msgid "Setup Mounts"
 msgstr "Configurar montajes"
 
 msgid "Show in extensions"
-msgstr ""
+msgstr "Mostrar en menu extensiones"
 
 msgid "Size: "
 msgstr "Tamaño:"
 
-msgid "Softcam Manager"
+msgid "Softcam manager"
 msgstr "Administrador de Softcams"
 
-msgid "Softcam Manager Log"
+msgid "Softcam manager Log"
 msgstr "Historial del administrador de Softcam"
 
-msgid "Softcam Manager Setup"
+msgid "Softcam manager Setup"
 msgstr ""
 
 msgid "Softcam Setup"
@@ -634,18 +634,18 @@ msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Archivo de intercambio no encontrado. Hay que crearlo antes de activarlo."
 
 msgid "Swap Manager"
-msgstr "Administrador de intercambio"
+msgstr "Administrador SWAP"
 
-msgid "Swap Place:"
-msgstr "Destino de intercambio:"
+msgid "SWAP place:"
+msgstr "Destino SWAP:"
 
-msgid "Swap Size:"
-msgstr "Tamaño de intercambio"
+msgid "SWAP size:"
+msgstr "Tamaño SWAP:"
 
 msgid "TB"
 msgstr "TB"
 
-msgid "Temp Folder"
+msgid "Temp folder"
 msgstr "Carpeta temporal"
 
 msgid "The backup location does not have enough freespace."
@@ -679,27 +679,27 @@ msgid "Updating mount locations."
 msgstr "Actualizando destinos de montaje."
 
 msgid "Use as HDD"
-msgstr "Usar en lugar de disco duro"
+msgstr "Utilizar como disco duro"
 
 msgid "ViX"
 msgstr "ViX"
 
-msgid "ViX Backup Manager"
-msgstr ""
+msgid "ViX Backup manager"
+msgstr "ViX administrador copias seguridad"
 
-msgid "ViX Image Manager"
-msgstr ""
+msgid "ViX Image manager"
+msgstr "ViX administrador de imagen"
 
-msgid "ViX Mount Manager"
-msgstr ""
+msgid "ViX Mount manager"
+msgstr "ViX administrador de montajes"
 
-msgid "ViX Script Runner"
-msgstr ""
+msgid "ViX Script runner"
+msgstr "ViX Administrar scripts"
 
 msgid "ViX Swap Manager"
 msgstr ""
 
-msgid "View Progress"
+msgid "View progress"
 msgstr "Ver proceso"
 
 msgid "Wait please while creating swapfile..."
@@ -789,3 +789,8 @@ msgstr ""
 
 msgid "unavailable"
 msgstr "no disponible"
+
+msgid "Include machine name in backup name"
+msgstr "Incluir el nombre de la máquina en el nombre de la copia de seguridad"
+
+

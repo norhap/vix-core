@@ -22,13 +22,13 @@ msgid "%a %e %b  %-H:%M"
 msgstr "%a %e %b  %-H:%M"
 
 msgid "128 Mb"
-msgstr ""
+msgstr "128 Mb"
 
 msgid "16 Mb"
 msgstr "16Mb"
 
 msgid "256 Mb"
-msgstr ""
+msgstr "256 Mb"
 
 msgid "30 Days"
 msgstr "30 días"
@@ -60,8 +60,11 @@ msgstr "Activo"
 msgid "Active:"
 msgstr "Activo:"
 
+msgid "Allows the script runner to be launched from extensions."
+msgstr "Permite que el script script se inicie desde extensiones."
+
 msgid "Allows the softcam manager to be launched from extensions."
-msgstr ""
+msgstr "Permite que el administrador de softcam se inicie en extensiones."
 
 msgid "Allows the softcam to be checked if it stopped working, and restarted automatically if needed."
 msgstr "Permite detectar si el softcam ya no funciona y lo reinicia si hace falta."
@@ -69,8 +72,8 @@ msgstr "Permite detectar si el softcam ya no funciona y lo reinicia si hace falt
 msgid "Allows you have the window close automatically."
 msgstr "Permite que la ventana se cierre automáticamente."
 
-msgid "Allows you to close the window close automatically."
-msgstr "Le permite cerrar la ventana cerrar automáticamente."
+msgid "Allows you to close the window automatically."
+msgstr "Le permite cerrar la ventana automáticamente."
 
 msgid "Allows you to schedule your backups."
 msgstr "Permite programar copias de seguridad."
@@ -115,6 +118,9 @@ msgid ""
 "Are you sure you want to restore this image:\n"
 " "
 msgstr ""
+"Está seguro que quiere restaurar la imagen:\n"
+" "
+
 
 msgid "Autostart"
 msgstr "Autoinicio"
@@ -173,6 +179,8 @@ msgid ""
 "Changes need a system restart to take effect.\n"
 "Restart your %s %s now?"
 msgstr ""
+"Los cambios necesitan que se reinicie el sistema para que tenga efecto.\n"
+"¿Reiniciar su %s %s ahora?"
 
 msgid "Checking Free RAM.."
 msgstr "Comprobando RAM libre..."
@@ -217,7 +225,7 @@ msgid "Creating list of installed plugins..."
 msgstr "Creando una lista de complementos instalados..."
 
 msgid "Creating zip..."
-msgstr ""
+msgstr "Creando zip..."
 
 msgid "Current Status:"
 msgstr "Estado actual:"
@@ -283,7 +291,7 @@ msgid "Found none standard softcam, trying to start, this may fail"
 msgstr "No se ha encontrado Softcam estándar. Intento de inicio (puede fallar)"
 
 msgid "Free space:"
-msgstr ""
+msgstr "Espacio libre:"
 
 msgid "Frozen check interval"
 msgstr "Intervalo de prueba de congelado"
@@ -331,7 +339,7 @@ msgid "Invert"
 msgstr "Seleccionar Todo"
 
 msgid "Ipkg"
-msgstr ""
+msgstr "Ipkg"
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 msgstr "No has configurado un destion adicional. Elige uno en el menú del administrador de copias"
@@ -440,7 +448,7 @@ msgid "OK, to perform a restore"
 msgstr "Sí, restaurar"
 
 msgid "Please copy the folder"
-msgstr ""
+msgstr "Por favor copia la carpeta"
 
 msgid "Please enter a folder that contains some packages."
 msgstr "Por favor introduce una carpeta que contenga paquetes."
@@ -458,7 +466,7 @@ msgid "Please wait while plugins restore completes..."
 msgstr "Espera mientras se restauran los complementos..."
 
 msgid "Please wait while restore prepares"
-msgstr ""
+msgstr "Por favor espere mientras se prepara la restauración"
 
 msgid "Please wait while settings restore completes..."
 msgstr "Espera mientras se restaura la configuración..."
@@ -479,7 +487,7 @@ msgid "Preparing extra plugins..."
 msgstr "Preparando complementos extras..."
 
 msgid "Press OK to toggle the selection."
-msgstr ""
+msgstr "Presione OK para alternar la selección."
 
 msgid "Rebooting..."
 msgstr "Reiniciando..."
@@ -498,7 +506,7 @@ msgstr "Reiniciar"
 
 #, python-format
 msgid "Restart %s %s."
-msgstr ""
+msgstr "Reiniciar %s %s."
 
 msgid "Restart enigma2."
 msgstr "Reiniciar Enigma2"
@@ -537,7 +545,7 @@ msgid "Script runner"
 msgstr "Administrador de scripts"
 
 msgid "Script Runner Setup"
-msgstr ""
+msgstr "Configuración de Script Runner"
 
 msgid "Select"
 msgstr "Seleccionar"
@@ -600,7 +608,7 @@ msgid "Softcam manager Log"
 msgstr "Historial del administrador de Softcam"
 
 msgid "Softcam manager Setup"
-msgstr ""
+msgstr "Configuración de Softcam manager"
 
 msgid "Softcam Setup"
 msgstr "Configuración de Softcam"
@@ -609,13 +617,13 @@ msgid "Softcam Starting..."
 msgstr "Abriendo Softcam..."
 
 msgid "Softcam Stopping..."
-msgstr ""
+msgstr "Parando Softcam..."
 
 msgid "SoftcamCheck"
 msgstr "Prueba de Softcam"
 
 msgid "Sorry Image Restore is not supported on the"
-msgstr ""
+msgstr "Lo sentimos Imagen Restaurada no es compatible"
 
 msgid "Sorry but location does exist or not setup, please setup in Backup Manager setup menu "
 msgstr "Ojo: el destino no existe o no está configurado. Configúralo en el menú de administrador de copias de seguridad"
@@ -628,7 +636,7 @@ msgstr "Ojo: los feeds están apagados por mantenimiento. Restaura los complemen
 
 #, python-format
 msgid "Sorry you %s %s is not yet compatible."
-msgstr ""
+msgstr "Lo sentimos %s %s no es compatible"
 
 msgid "Sorry, but the restore failed."
 msgstr "Ojo: la restauración ha fallado."
@@ -691,10 +699,10 @@ msgid "Type: "
 msgstr "Tipo:"
 
 msgid "USB: "
-msgstr ""
+msgstr "USB: "
 
 msgid "Unmount"
-msgstr ""
+msgstr "Desmontar"
 
 msgid "Updating mount locations."
 msgstr "Actualizando destinos de montaje."
@@ -718,7 +726,7 @@ msgid "ViX Script runner"
 msgstr "ViX Administrar scripts"
 
 msgid "ViX Swap Manager"
-msgstr ""
+msgstr "ViX Administrar Swap"
 
 msgid "View progress"
 msgstr "Ver proceso"
@@ -736,7 +744,7 @@ msgstr "Por favor espera mientras se buscan dispositivos..."
 
 #, python-format
 msgid "Wait please while scanning your %s %s devices..."
-msgstr ""
+msgstr "Espere por favor mientras escanea sus %s %s dispositivos..."
 
 msgid "Wait please while scanning..."
 msgstr "Por favor espera mientras se busca..."
@@ -774,7 +782,7 @@ msgid "You have no image to download."
 msgstr "No hay ninguna imagen para descargar."
 
 msgid "You have no image to restore."
-msgstr ""
+msgstr "No tienes imagen para restaurar."
 
 msgid "You have to create a Swap File before to activate the autostart."
 msgstr "Hay que crear un archivo de intercambio antes de activar autoinicio."
@@ -784,29 +792,33 @@ msgid ""
 "Your %s %s is about to run a backup of your settings and detect your plugins,\n"
 "Do you want to allow this?"
 msgstr ""
+"Su %s %s está a punto de ejecutar una copia de seguridad de su configuración y detectar sus complementos,\n"
+"Quieres permitir esto?"
 
 #, python-format
 msgid ""
 "Your %s %s is about to run a full image backup, this can take about 6 minutes to complete,\n"
 "do you want to allow this?"
 msgstr ""
+"Su %s %s está a punto de ejecutar una copia de seguridad de la imagen completa, esto puede tardar unos 6 minutos en completarse,\n"
+"quieres permitir esto?"
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, Please try using Backup Manager to restore plugins later."
-msgstr ""
+msgstr "Su %s %s no está conectado a Internet. Intente usar el Administrador de copia de seguridad para restaurar los complementos más tarde."
 
 #, python-format
 msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr ""
+msgstr "Su %s %s no está conectado a Internet, verifique la configuración de su red y vuelva a intentarlo."
 
 msgid "echo 'Downloading Image.'"
-msgstr "echo 'Descargando Image'"
+msgstr "echo 'Descargando Imagen.'"
 
 msgid "there was a problem with this device, please reformat and try again."
 msgstr "Ha habido un problema con este dispositivo. Reformatéalo y vuelve a intentarlo."
 
 msgid "to a USB stick, place in front USB port of reciver and power on"
-msgstr ""
+msgstr "a una memoria USB, colóquela en el puerto USB frontal del receptor y enciéndala"
 
 msgid "unavailable"
 msgstr "no disponible"

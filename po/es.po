@@ -664,8 +664,8 @@ msgstr "Detener"
 msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Archivo de intercambio no encontrado. Hay que crearlo antes de activarlo."
 
-msgid "Swap manager"
-msgstr "Administrador swap"
+msgid "SWAP manager"
+msgstr "SWAP Administrador"
 
 msgid "SWAP place:"
 msgstr "Destino SWAP:"

@@ -444,7 +444,7 @@ msgid "Now skipping restore process"
 msgstr "Se saltará el proceso de restaurar"
 
 msgid "OK"
-msgstr "Sí"
+msgstr "OK"
 
 msgid "OK, to perform a restore"
 msgstr "Sí, restaurar"

@@ -359,7 +359,7 @@ msgid "MGcamd can't run whilst CCcam is running"
 msgstr "MGcamd no puede funcionar mientras funciona CCcam"
 
 msgid "Manage you devices mountpoints."
-msgstr "Administrar los puntos de montaje de tus dispositivos."
+msgstr "Administrar los puntos de montaje de sus dispositivos."
 
 msgid "Manage your backups of your settings."
 msgstr "Administrar tus copias de configuración."
@@ -832,4 +832,4 @@ msgid "The name of the receiver can be included in the backup filename, but make
 msgstr "El nombre del receptor se puede incluir en el nombre del archivo de respaldo, pero hace que el nombre del archivo sea largo."
 
 msgid "Manage the backups of your settings."
-msgstr "Gestiona las copias de seguridad de tu configuración."
+msgstr "Gestiona las copias de seguridad de su configuración."

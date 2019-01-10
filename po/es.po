@@ -833,6 +833,3 @@ msgstr "El nombre del receptor se puede incluir en el nombre del archivo de resp
 
 msgid "Manage the backups of your settings."
 msgstr "Gestiona las copias de seguridad de tu configuración."
-
-msgid "Welcome..."
-msgstr "Bienvenido..."

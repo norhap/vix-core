@@ -121,6 +121,8 @@ msgstr ""
 "Está seguro que quiere restaurar la imagen:\n"
 " "
 
+msgid "Automatic settings backup"
+msgstr "Configuración automática de copia de seguridad"
 
 msgid "Autostart"
 msgstr "Autoinicio"

@@ -347,7 +347,7 @@ msgid "It seems you have not setup a extra location, please setup in Backup Mana
 msgstr "Parece que no ha configurado una ubicación adicional, configure en el menú de configuración de Backup Manager "
 
 msgid "Location of where backup should be saved."
-msgstr "Destino de las grabaciones de copias de seguridad."
+msgstr "Destino de las copias de seguridad."
 
 msgid "Location of where the image backup should be saved."
 msgstr "Ubicación donde debe guardar la copia de seguridad de imagen."

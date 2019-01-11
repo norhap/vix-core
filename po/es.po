@@ -826,7 +826,7 @@ msgid "unavailable"
 msgstr "no disponible"
 
 msgid "Include machine name in backup name"
-msgstr "Incluir el nombre de la máquina en el nombre de la copia de seguridad"
+msgstr "Incluir el nombre del receptor en el nombre de la copia de seguridad"
 
 msgid "The name of the receiver can be included in the backup filename, but makes the filename lengthy."
 msgstr "El nombre del receptor se puede incluir en el nombre del archivo de respaldo, pero hace que el nombre del archivo sea largo."

@@ -694,7 +694,7 @@ msgstr "El asistente ha terminado ahora."
 msgid "This Device is already mounted as HDD."
 msgstr "Este dispositivo ya está montado como disco duro."
 
-msgid "Time of Backup to start"
+msgid "Time of backup to start"
 msgstr "Hora de inicio de la copia de seguridad"
 
 msgid "Type: "
@@ -833,3 +833,15 @@ msgstr "El nombre del receptor se puede incluir en el nombre del archivo de resp
 
 msgid "Manage the backups of your settings."
 msgstr "Gestiona las copias de seguridad de su configuración."
+
+msgid "Query before backup starts"
+msgstr "Consulta antes de que comience la copia de seguridad"
+
+msgid "Query before starting backup."
+msgstr "Consulta antes de iniciar la copia de seguridad."
+
+msgid "Max backups to keep (0==all)"
+msgstr "Máximas copias de seguridad para mantener (0==todo)"
+
+msgid "Backups to keep"
+msgstr "Copias de seguridad para mantener"

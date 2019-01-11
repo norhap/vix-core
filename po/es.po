@@ -489,7 +489,7 @@ msgid "Preparing extra plugins..."
 msgstr "Preparando complementos extras..."
 
 msgid "Press OK to toggle the selection."
-msgstr "Presione OK para alternar la selección."
+msgstr "Pulse OK para alternar la selección."
 
 msgid "Rebooting..."
 msgstr "Reiniciando..."

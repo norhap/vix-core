@@ -461,8 +461,8 @@ msgstr "Por favor, selecciona un dispositivo como destino de intercambio"
 msgid "Please select the file to restore."
 msgstr "Selecciona la copia para restaurar."
 
-msgid "Please wait while gathers information..."
-msgstr "Espera mientras se recopila la información..."
+msgid "Please wait while the system gathers information..."
+msgstr "Espera mientras se recopila la información del sistema..."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Espera mientras se restauran los complementos..."
@@ -689,7 +689,7 @@ msgid "The wizard is finished now, and will reboot."
 msgstr "El asistente ha terminado y va a reiniciar."
 
 msgid "The wizard is finished now."
-msgstr "El asistente ha terminado ahora."
+msgstr "El asistente ha terminado ahora pulsa OK para continuar."
 
 msgid "This Device is already mounted as HDD."
 msgstr "Este dispositivo ya está montado como disco duro."

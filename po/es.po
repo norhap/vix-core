@@ -82,10 +82,10 @@ msgid "Allows you to schedule your image backups."
 msgstr "Te permite programar copias de imágenes."
 
 msgid "Allows you to tag your backups to a box."
-msgstr "Permite nombrar tus copias de seguridad a un receptor."
+msgstr "Permite nombrar sus copias de seguridad a un receptor."
 
 msgid "Allows you to tag your image backup to a box. (default is box name/type)"
-msgstr "Permite nombrar tus copias de seguridad de imágenes (por defecto es nombre/tipo de receptor)"
+msgstr "Permite nombrar sus copias de seguridad de imágenes (por defecto es nombre/tipo de receptor)"
 
 msgid "Are you ready to create a backup image ?"
 msgstr "¿Guardar una copia de seguridad de imágenes ahora?"
@@ -197,7 +197,7 @@ msgid "Choose local IPK's folder"
 msgstr "Elegir carpeta local IPK"
 
 msgid "Choose where to mount your devices to:"
-msgstr "Elegir dónde montar tus dispositivos:"
+msgstr "Elegir dónde montar sus dispositivos:"
 
 msgid "Close"
 msgstr "Cerrar"
@@ -254,7 +254,7 @@ msgid "Disable Startup"
 msgstr "Desactivar puesta en marcha"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
-msgstr "¿Quieres restaurar tus complementos de Enigma2?"
+msgstr "¿Quieres restaurar sus complementos de Enigma2?"
 
 msgid "Do you want to restore your Enigma2 settings ?"
 msgstr "¿Quieres restaurar tu configuración de Enigma2?"
@@ -362,7 +362,7 @@ msgid "Manage you devices mountpoints."
 msgstr "Administrar los puntos de montaje de sus dispositivos."
 
 msgid "Manage your backups of your settings."
-msgstr "Administrar tus copias de configuración."
+msgstr "Administrar sus copias de configuración."
 
 msgid "Create and flash complete images of your system."
 msgstr "Crea y flashea imágenes completas de su sistema."

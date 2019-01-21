@@ -845,3 +845,6 @@ msgstr "Máximas copias de seguridad para mantener (0==todo)"
 
 msgid "Backups to keep"
 msgstr "Copias de seguridad para mantener"
+
+msgid "Do you want to restart GUI now ?"
+msgstr "Desea Reiniciar Enigma2 ahora ?"

@@ -848,3 +848,6 @@ msgstr "Copias de seguridad para mantener"
 
 msgid "Do you want to restart GUI now ?"
 msgstr "Desea Reiniciar Enigma2 ahora ?"
+
+msgid "Restart GUI."
+msgstr "Reiniciar GUI."

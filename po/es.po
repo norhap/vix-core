@@ -483,7 +483,7 @@ msgid "Please wait."
 msgstr "Espera por favor."
 
 msgid "Plugin Listing failed - e. g. wrong backup destination or no space left on backup device"
-msgstr "Lista de complementos fallida (destino erróneo o no hay espacio suficiente en el dispositivo de almacenamiento)"
+msgstr "Lista de complementos fallida - ej. destino erróneo o no hay espacio suficiente en el dispositivo de almacenamiento"
 
 msgid "Preparing extra plugins..."
 msgstr "Preparando complementos extras..."
@@ -739,7 +739,9 @@ msgstr "Por favor espera mientras se crea un archivo de intercambio..."
 msgid ""
 "Wait please while scanning\n"
 "for softcam's..."
-msgstr "Por favor espera mientras se buscan Softcams..."
+msgstr ""
+"Espere por favor mientras escanea\n"
+"para softcam's..."
 
 msgid "Wait please while scanning for devices..."
 msgstr "Por favor espera mientras se buscan dispositivos..."
@@ -795,6 +797,22 @@ msgid ""
 "Do you want to allow this?"
 msgstr ""
 "Su %s %s está a punto de ejecutar una copia de seguridad de su configuración y detectar sus complementos,\n"
+"Quieres permitir esto?"
+
+#, python-format
+msgid ""
+"Your %s %s is about to create a full image backup, this can take about 6 minutes to complete.\n"
+"Do you want to allow this?"
+msgstr ""
+"Su %s %s está a punto de crear una copia de seguridad de la imagen completa, esto puede tardar unos 6 minutos en completarse.\n"
+"Quieres permitir esto?"
+
+#, python-format
+msgid ""
+"Your %s %s is about to run a backup of your settings and to detect your plugins.\n"
+"Do you want to allow this?"
+msgstr ""
+"Su %s %s está a punto de ejecutar una copia de seguridad de sus configuraciones y de detectar sus complementos.\n"
 "Quieres permitir esto?"
 
 #, python-format

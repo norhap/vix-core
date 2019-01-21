@@ -322,8 +322,8 @@ msgstr "Info"
 msgid "Install"
 msgstr "Instalar"
 
-msgid "Install Confirmation"
-msgstr "Confirmación de instalación"
+msgid "Install confirmation"
+msgstr "Confirmación de Instalación"
 
 msgid "Install IPK's from your tmp folder."
 msgstr "Instalar IPKs de la carpeta /tmp."
@@ -845,3 +845,6 @@ msgstr "Máximas copias de seguridad para mantener (0==todo)"
 
 msgid "Backups to keep"
 msgstr "Copias de seguridad para mantener"
+
+msgid "Do you want to restart the GUI now?"
+msgstr "¿Quieres reiniciar la GUI ahora?"

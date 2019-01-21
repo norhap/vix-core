@@ -64,14 +64,14 @@ class VIXMenu(Screen, ProtectedScreen):
 		self.menu = args
 		self.list = []
 		if self.menu == 0:
-			self.list.append(("backup-manager", _("Backup manager"), _("Manage the backups of your settings."), None))
-			self.list.append(("image-manager", _("Image manager"), _("Create and flash complete images of your system."), None))
-			self.list.append(("ipkg-install", _("Install local extension"), _("Install IPK's from your tmp folder."), None))
-			self.list.append(("mount-manager", _("Mount manager"), _("Manage your devices mount points."), None))
-			self.list.append(("script-runner", _("Script runner"), _("Run your shell scripts."), None))
-			self.list.append(("swap-manager", _("SWAP manager"), _("Create and Manage your SWAP files."), None))
+			self.list.append(("administrador-copias-configuración", _("Backup manager"), _("Manage the backups of your settings."), None))
+			self.list.append(("administrador-imagen", _("Image manager"), _("Create and flash complete images of your system."), None))
+			self.list.append(("instalar-ipkg", _("Install local extension"), _("Install IPK's from your tmp folder."), None))
+			self.list.append(("administrador-montajes", _("Mount manager"), _("Manage your devices mount points."), None))
+			self.list.append(("ejecutar-scripts", _("Script runner"), _("Run your shell scripts."), None))
+			self.list.append(("administrador-swap", _("SWAP manager"), _("Create and Manage your SWAP files."), None))
 			if SystemInfo["canMultiBoot"]:
-				self.list.append(("multiboot manager", _("MultiBoot manager"), _("Create empty slot."), None))
+				self.list.append(("administrador multiboot", _("MultiBoot manager"), _("Create empty slot."), None))
 		self["menu"] = List(self.list)
 		self["key_red"] = StaticText(_("Close"))
 
@@ -128,25 +128,25 @@ class VIXMenu(Screen, ProtectedScreen):
 		if current:
 			currentEntry = current[0]
 			if self.menu == 0:
-				if currentEntry == "backup-manager":
+				if currentEntry == "administrador-copias-configuración":
 					from BackupManager import VIXBackupManager
 					self.session.open(VIXBackupManager, self.menu_path)
-				elif currentEntry == "image-manager":
+				elif currentEntry == "administrador-imagen":
 					from ImageManager import VIXImageManager
 					self.session.open(VIXImageManager, self.menu_path)
-				elif currentEntry == "multiboot manager":
+				elif currentEntry == "administrador multiboot":
 					from Multibootmgr import MultiBoot
 					self.session.open(MultiBoot, self.menu_path)
-				elif currentEntry == "ipkg-install":
+				elif currentEntry == "instalar-ipkg":
 					from IPKInstaller import VIXIPKInstaller
 					self.session.open(VIXIPKInstaller, self.menu_path)
-				elif currentEntry == "mount-manager":
+				elif currentEntry == "administrador-montajes":
 					from MountManager import VIXDevicesPanel
 					self.session.open(VIXDevicesPanel, self.menu_path)
-				elif currentEntry == "script-runner":
+				elif currentEntry == "ejecutar-scripts":
 					from ScriptRunner import VIXScriptRunner
 					self.session.open(VIXScriptRunner, None, self.menu_path)
-				elif currentEntry == "swap-manager":
+				elif currentEntry == "administrador-swap":
 					from SwapManager import VIXSwap
 					self.session.open(VIXSwap, self.menu_path)
 

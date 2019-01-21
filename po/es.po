@@ -731,7 +731,7 @@ msgid "ViX Swap Manager"
 msgstr "ViX Administrar Swap"
 
 msgid "View progress"
-msgstr "Ver proceso"
+msgstr "Ver progreso"
 
 msgid "Wait please while creating swapfile..."
 msgstr "Por favor espera mientras se crea un archivo de intercambio..."

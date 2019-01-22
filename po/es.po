@@ -401,7 +401,7 @@ msgid "NO, do not restore settings"
 msgstr "No restaurar la configuración"
 
 msgid "New backup"
-msgstr "Nueva copia configuración"
+msgstr "Nueva copia de seguridad"
 
 msgid "Next backup: "
 msgstr "Próxima copia de seguridad: "

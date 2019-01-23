@@ -555,6 +555,9 @@ msgstr "Ejecutar"
 msgid "Run your shell scripts."
 msgstr "Ejecutar scripts de shell."
 
+msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
+msgstr "Se detectó una tarjeta SD pero no se formateó para el arranque múltiple: use ViX MultiBoot Manager para formatear."
+
 msgid "Save"
 msgstr "Guardar"
 
@@ -709,6 +712,24 @@ msgstr "El asistente ha terminado, el receptor va a reiniciar."
 msgid "The wizard is finished now."
 msgstr "El asistente ha terminado ahora pulsa OK para continuar."
 
+msgid "There is a problem with this device. Please reformat it and try again."
+msgstr "Hay un problema con este dispositivo. Por favor reformatealo y vuelve a intentarlo."
+
+msgid "There is no backup to delete."
+msgstr "No hay una copia de seguridad para eliminar."
+
+msgid "There is no backup to restore."
+msgstr "No hay copia de seguridad para restaurar."
+
+msgid "There is no image to delete."
+msgstr "No hay imagen para borrar."
+
+msgid "There is no image to download."
+msgstr "No hay imagen para descargar."
+
+msgid "There is no image to flash."
+msgstr "No hay imagen para flashear."
+
 msgid "This Device is already mounted as HDD."
 msgstr "Este dispositivo ya está montado como disco duro."
 
@@ -790,6 +811,17 @@ msgstr "Sí, restaurar complementos"
 
 msgid "YES, to restore settings"
 msgstr "Sí, restaurar configuración"
+
+msgid ""
+"You are about to flash an eMMC flash; we cannot take any responsibility for any errors or damage to your box during this process.\n"
+"Proceed with CAUTION!:\n"
+"Are you sure you want to flash this image:\n"
+" "
+msgstr ""
+"Estás a punto de flashear un flash eMMC; No podemos asumir ninguna responsabilidad por cualquier error o daño en su receptor durante este proceso.\n"
+"Proceda con precaución!:\n"
+"Estás seguro de que quieres flashear esta imagen:\n"
+" "
 
 msgid "You have no backup to delete."
 msgstr "No hay ninguna copia para borrar."

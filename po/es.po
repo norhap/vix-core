@@ -479,6 +479,9 @@ msgstr "Espera mientras se inicia\n"
 msgid "Please wait while stopping\n"
 msgstr "Espera mientras se detiene\n"
 
+msgid "Please wait while scanning for devices..."
+msgstr "Por favor espere mientras busca dispositivos..."
+
 msgid "Please wait."
 msgstr "Espera por favor."
 

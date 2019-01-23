@@ -253,6 +253,21 @@ msgstr "Dispositivo: ninguno disponible"
 msgid "Disable Startup"
 msgstr "Desactivar puesta en marcha"
 
+msgid ""
+"Do you want to create a full image backup?\n"
+"This can take about 6 minutes to complete."
+msgstr ""
+"Quieres crear una copia de seguridad de la imagen completa?\n"
+"Esto puede tardar unos 6 minutos en completarse."
+
+#, python-format
+msgid ""
+"Do you want to flash image\n"
+"%s"
+msgstr ""
+"Quieres flashear la imagen\n"
+"%s"
+
 msgid "Do you want to restore your Enigma2 plugins ?"
 msgstr "¿Quieres restaurar sus complementos de Enigma2?"
 

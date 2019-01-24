@@ -209,7 +209,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 msgid "Change location"
-msgstr "Cambiar destino"
+msgstr "Cambiar ubicación"
 
 #, python-format
 msgid ""

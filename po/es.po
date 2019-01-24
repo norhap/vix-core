@@ -581,8 +581,8 @@ msgstr "Reiniciar Enigma2."
 msgid "Restore"
 msgstr "Restaurar"
 
-msgid "Restore confirmation"
-msgstr "Confirmación de restaurar"
+msgid "Restore Confirmation"
+msgstr "Confirmación Restaurar"
 
 msgid "Restore wizard"
 msgstr "Asistente de restauración"

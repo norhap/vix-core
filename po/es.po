@@ -319,7 +319,7 @@ msgid "Downloading Image..."
 msgstr "Descargando Image..."
 
 msgid "Downloads"
-msgstr "Descargas"
+msgstr "Descargas Imagen"
 
 msgid "Enable startup"
 msgstr "Habilitar al iniciar"
@@ -472,10 +472,16 @@ msgid "NO, do not restore settings"
 msgstr "No restaurar la configuración"
 
 msgid "New backup"
-msgstr "Nueva copia de seguridad"
+msgstr "Nueva copia configuración"
+
+msgid "New backupimage"
+msgstr "Nueva copia de imagen"
 
 msgid "Next backup: "
-msgstr "Próxima copia de seguridad: "
+msgstr "Próxima copia configuración: "
+
+msgid "Next backupimage: "
+msgstr "Próxima copia de imagen: "
 
 msgid ""
 "No config files found, please setup CCcam first\n"

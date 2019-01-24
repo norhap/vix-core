@@ -173,7 +173,7 @@ class VIXImageManager(Screen):
 		if self.BackupRunning:
 			self["key_green"].setText(_("View progress"))
 		else:
-			self["key_green"].setText(_("New backup"))
+			self["key_green"].setText(_("New backupimage"))
 		self.activityTimer.startLongTimer(5)
 
 	def refreshUp(self):
@@ -307,7 +307,7 @@ class VIXImageManager(Screen):
 				autoImageManagerTimer.backupstop()
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next backup: ") + strftime(_("%a %e %b  %-H:%M"), t)
+			backuptext = _("Next backupimage: ") + strftime(_("%a %e %b  %-H:%M"), t)
 		else:
 			backuptext = _("Next backup: ")
 		self["backupstatus"].setText(str(backuptext))

@@ -403,7 +403,7 @@ msgid "Ipkg"
 msgstr "Ipkg"
 
 msgid "It seems you have not setup an extra location. Please set it up in the Backup manager setup menu."
-msgstr "Parece que no has configurado una ubicación extra. Configuralo en Administrador-copias-configuración ...menu/boton azul 'Elegir carpeta local IPK."
+msgstr "Parece que no has configurado una ubicación extra. Configúralo en Administrador-copias-configuración ...menu/botón azul 'Elegir carpeta local IPK'."
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 msgstr "Parece que no ha configurado una ubicación adicional, configure en el menú de configuración Administrador-copias-configuración "

@@ -754,7 +754,7 @@ msgid "TB"
 msgstr "TB"
 
 msgid "Temp folder"
-msgstr "Carpeta Temp"
+msgstr "Carpeta temp"
 
 msgid "The backup location does not have enough free space."
 msgstr "El destino de copias de seguridad no tiene espacio suficiente."

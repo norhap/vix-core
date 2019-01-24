@@ -61,7 +61,7 @@ msgid "Active:"
 msgstr "Activo:"
 
 msgid "Allows the script runner to be launched from extensions."
-msgstr "Permite que el script script se inicie desde extensiones."
+msgstr "Permite que Ejecutar-scripts se inicie desde extensiones."
 
 msgid "Allows the softcam manager to be launched from extensions."
 msgstr "Permite que el administrador de softcam se inicie en extensiones."
@@ -609,10 +609,10 @@ msgid "Schedule backups"
 msgstr "Programar copias de seguridad"
 
 msgid "Script runner"
-msgstr "Administrador de scripts"
+msgstr "Ejecuciones de Scripts"
 
 msgid "Script Runner Setup"
-msgstr "Configuración de Script Runner"
+msgstr "Configuración Ejecuciones de Scripts"
 
 msgid "Select"
 msgstr "Seleccionar"
@@ -808,7 +808,7 @@ msgid "ViX Mount manager"
 msgstr "ViX administrador de montajes"
 
 msgid "ViX Script runner"
-msgstr "ViX Administrar scripts"
+msgstr "ViX Ejecuciones de Scripts"
 
 msgid "ViX Swap Manager"
 msgstr "ViX Administrar Swap"

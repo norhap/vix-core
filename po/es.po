@@ -339,8 +339,17 @@ msgstr "Salir del asistente de restauración"
 msgid "Extra IPK's"
 msgstr "Más IPKs"
 
-msgid "Found none standard softcam, trying to start, this may fail"
-msgstr "No se ha encontrado Softcam estándar. Intento de inicio (puede fallar)"
+msgid "Flash"
+msgstr "Flash"
+
+msgid "Flash confirmation"
+msgstr "Confirmación Flash"
+
+msgid "Flash image unzip successful."
+msgstr "Descomprimida imagen Flash con éxito."
+
+msgid "Found non-standard softcam, trying to start, this may fail."
+msgstr "Se encontró un softcam no estándar, al intentar iniciarse, esto puede fallar."
 
 msgid "Free space:"
 msgstr "Espacio libre:"

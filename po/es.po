@@ -799,19 +799,19 @@ msgid "ViX"
 msgstr "ViX"
 
 msgid "ViX Backup manager"
-msgstr "ViX administrador copias seguridad"
+msgstr "ViX Administrador-copias-configuración"
 
 msgid "ViX Image manager"
-msgstr "ViX administrador de imagen"
+msgstr "ViX Administrador-imagen"
 
 msgid "ViX Mount manager"
-msgstr "ViX administrador de montajes"
+msgstr "ViX Administrador-montajes"
 
 msgid "ViX Script runner"
-msgstr "ViX Ejecuciones de Scripts"
+msgstr "ViX Ejecutar-scripts"
 
 msgid "ViX Swap Manager"
-msgstr "ViX Administrar Swap"
+msgstr "ViX Administrador-swap"
 
 msgid "View progress"
 msgstr "Ver progreso"

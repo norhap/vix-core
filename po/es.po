@@ -680,10 +680,10 @@ msgstr "Configuración de Softcam manager"
 msgid "Softcam Setup"
 msgstr "Configuración de Softcam"
 
-msgid "Softcam Starting..."
+msgid "Softcam starting..."
 msgstr "Abriendo Softcam..."
 
-msgid "Softcam Stopping..."
+msgid "Softcam stopping..."
 msgstr "Parando Softcam..."
 
 msgid "SoftcamCheck"

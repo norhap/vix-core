@@ -208,7 +208,7 @@ msgstr "No se puede demontar la partición. Revisa que no está en uso por inter
 msgid "Cancel"
 msgstr "Cancelar"
 
-msgid "Change Location"
+msgid "Change location"
 msgstr "Cambiar destino"
 
 #, python-format
@@ -395,6 +395,15 @@ msgstr "Ipkg"
 
 msgid "It seems you have not setup a extra location, please setup in Backup Manager setup menu "
 msgstr "Parece que no ha configurado una ubicación adicional, configure en el menú de configuración de Backup Manager "
+
+msgid "It seems you have not setup an extra location, please set it up in the Backup Manager setup menu "
+msgstr "Parece que no ha configurado una ubicación adicional, configúrela en el menú de configuración de Backup Manager "
+
+msgid "It seems you have not setup an extra location, please setup in Backup Manager setup menu "
+msgstr "Parece que no ha configurado una ubicación adicional, configure en el menú de configuración de Backup Manager "
+
+msgid "It seems you have not setup an extra location; please set it up in the Backup manager setup menu."
+msgstr "Parece que no has configurado una ubicación extra; Por favor, configúrelo en el menú de configuración del administrador de copia de seguridad."
 
 msgid "Location of where backup should be saved."
 msgstr "Destino de las copias de seguridad."

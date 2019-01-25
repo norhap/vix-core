@@ -965,13 +965,22 @@ msgid "Manage the backups of your settings."
 msgstr "Gestiona las copias de seguridad de su configuración."
 
 msgid "Query before backup starts"
-msgstr "Consulta antes de que comience la copia de seguridad"
+msgstr "Consulta antes de que comience la copia configuración"
+
+msgid "Query before image backup starts"
+msgstr "Consulta antes de que comience la copia de imagen"
 
 msgid "Query before starting backup."
-msgstr "Consulta antes de iniciar la copia de seguridad."
+msgstr "Consulta antes de iniciar la copia de configuración."
+
+msgid "Query before starting image backup."
+msgstr "Consulta antes de iniciar la copia de imagen."
 
 msgid "Max backups to keep (0==all)"
-msgstr "Máximas copias de seguridad para mantener (0==todo)"
+msgstr "Máximas copias de seguridad para mantener (0==todas)"
+
+msgid "Max image backups to keep (0==all)"
+msgstr "Máximo de copias de imagen para mantener (0==todas)"
 
 msgid "Backups to keep"
 msgstr "Copias de seguridad para mantener"

@@ -319,7 +319,7 @@ msgid "Downloading Image..."
 msgstr "Descargando Image..."
 
 msgid "Downloads"
-msgstr "Descargas Imagen"
+msgstr "Descargar Imagen"
 
 msgid "Enable startup"
 msgstr "Habilitar al iniciar"
@@ -475,7 +475,7 @@ msgid "New backup"
 msgstr "Nueva copia configuración"
 
 msgid "New backupimage"
-msgstr "Nueva copia de imagen"
+msgstr "Nueva copia imagen"
 
 msgid "Next backup: "
 msgstr "Próxima copia configuración: "

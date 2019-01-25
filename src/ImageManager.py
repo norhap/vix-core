@@ -309,7 +309,7 @@ class VIXImageManager(Screen):
 			t = localtime(BackupTime)
 			backuptext = _("Next backupimage: ") + strftime(_("%a %e %b  %-H:%M"), t)
 		else:
-			backuptext = _("Next backup: ")
+			backuptext = _("Next backupimage: ")
 		self["backupstatus"].setText(str(backuptext))
 
 	def keyDelete(self):

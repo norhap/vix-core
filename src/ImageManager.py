@@ -142,9 +142,9 @@ class VIXImageManager(Screen):
 
 		if BackupTime > 0:
 			t = localtime(BackupTime)
-			backuptext = _("Next backup: ") + strftime(_("%a %e %b  %-H:%M"), t)
+			backuptext = _("Next backupimage: ") + strftime(_("%a %e %b  %-H:%M"), t)
 		else:
-			backuptext = _("Next backup: ")
+			backuptext = _("Next backupimage: ")
 		self["backupstatus"].setText(str(backuptext))
 		if not self.selectionChanged in self["list"].onSelectionChanged:
 			self["list"].onSelectionChanged.append(self.selectionChanged)

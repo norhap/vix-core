@@ -456,8 +456,8 @@ msgstr "Desmontar"
 msgid "Mount manager"
 msgstr "Administrador de montajes"
 
-msgid "Mount failed"
-msgstr "Montaje fallido"
+msgid "Failed mount, complete reset to mount or press green key "set mounts"."
+msgstr "Montaje fallido, reinicia completo para montar o pulsa tecla verde "configurar montajes"."
 
 msgid "Mount: "
 msgstr "Montar: "

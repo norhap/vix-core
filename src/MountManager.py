@@ -54,8 +54,8 @@ class VIXDevicesPanel(Screen):
         self['list'] = List(self.list)
         self['list'].onSelectionChanged.append(self.selectionChanged)
         self['actions'] = ActionMap(['WizardActions', 'ColorActions', 'MenuActions'], {'back': self.close,
+		 'red': self.saveMypoints,
          'green': self.SetupMounts,
-         'red': self.saveMypoints,
          'yellow': self.Unmount,
          'blue': self.Mount,
          'menu': self.close})
@@ -242,7 +242,14 @@ class VIXDevicesPanel(Screen):
 			des = sel[1]
 			des = des.replace('\n', '\t')
 			parts = des.strip().split('\t')
+			self.device = parts[2]
+			self.mountp = parts[1]
 			device = parts[2].replace(_("Device: "), '')
+			if self.mountp.find('/media/hdd') < 0:
+				self.Console.ePopen('umount -f /dev/%s 2>&1' % (self.device))
+				self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp] )
+			else:
+				self.session.open(MessageBox, _("This device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 
     def add_fstab(self, result = None, retval = None, extra_args = None):
         self.device = extra_args[0]

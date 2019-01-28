@@ -792,8 +792,8 @@ msgstr "No hay imagen para descargar."
 msgid "There is no image to flash."
 msgstr "No hay imagen para flashear."
 
-msgid "This Device is already mounted as HDD."
-msgstr "Este dispositivo ya está montado como disco duro."
+msgid "This device is already mounted as HDD."
+msgstr "Este dispositivo ya está montado como HDD."
 
 msgid "Time of backup to start"
 msgstr "Hora de inicio de la copia de seguridad"
@@ -811,7 +811,7 @@ msgid "Updating mount locations."
 msgstr "Actualizando destinos de montaje."
 
 msgid "Use as HDD"
-msgstr "Utilizar como disco duro"
+msgstr "Usar como HDD"
 
 msgid "ViX"
 msgstr "ViX"

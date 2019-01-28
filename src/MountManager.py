@@ -209,7 +209,7 @@ class VIXDevicesPanel(Screen):
 
             f.close()
             if not mountok:
-                self.session.open(MessageBox, _('Montaje fallido, reinicia completo para montar o pulsa tecla verde "configurar montajes".'), MessageBox.TYPE_INFO, timeout=10)
+                self.session.open(MessageBox, _('Failed mount, complete reset to mount or press green key "set mounts".'), MessageBox.TYPE_INFO, timeout=10)
             self.updateList()
 
     def Unmount(self):

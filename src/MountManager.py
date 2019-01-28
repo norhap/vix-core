@@ -209,7 +209,7 @@ class VIXDevicesPanel(Screen):
 
             f.close()
             if not mountok:
-                self.session.open(MessageBox, _('Failed mount, complete reset to mount or press green key (set mounts).'), MessageBox.TYPE_INFO, timeout=10)
+                self.session.open(MessageBox, _('The mount failed, completely restart the receiver to reassemble it, or press the green key (set up mounts) to mount as /media/hdd../media/usb...etc.'), MessageBox.TYPE_INFO, timeout=20)
             self.updateList()
 
     def Unmount(self):
@@ -246,10 +246,28 @@ class VIXDevicesPanel(Screen):
 			self.mountp = parts[1]
 			device = parts[2].replace(_("Device: "), '')
 			if self.mountp.find('/media/hdd') < 0:
-				self.Console.ePopen('umount -f /dev/%s 2>&1' % (self.device))
-				self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp] )
+				pass			
 			else:
 				self.session.open(MessageBox, _("This device is already mounted as HDD."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+				return
+				system('umount /media/hdd')
+				try:
+					f = open('/proc/mounts', 'r')
+				except IOError:
+					return
+				for line in f.readlines():
+					if '/media/hdd' in line:
+						f.close()
+						self.session.open(MessageBox, _("Cannot unmount from the previous device from /media/hdd.\nA record in progress, timeshift or some external tools (like samba, nfsd,transmission and etc) may cause this problem.\nPlease stop this actions/applications and try again!"), MessageBox.TYPE_ERROR)
+						return
+					else:
+						pass
+				f.close()
+				if self.mountp.find('/media/hdd') < 0:
+					if self.mountp != _("None"):
+						system('umount ' + self.mountp)
+					system('umount ' + self.device)
+					self.Console.ePopen("/sbin/blkid | grep " + self.device, self.add_fstab, [self.device, self.mountp])				
 
     def add_fstab(self, result = None, retval = None, extra_args = None):
         self.device = extra_args[0]

@@ -435,6 +435,15 @@ msgstr "Administrar los puntos de montaje de sus dispositivos."
 msgid "Manage your backups of your settings."
 msgstr "Administrar sus copias de configuración."
 
+msgid "Cannot unmount from the previous device from /media/hdd.\n"
+msgstr "No se puede desmontar del dispositivo anterior desde /media/hdd.\n"
+
+msgid "A record in progress, timeshift or some external tools (like samba, nfsd,transmission and etc) may cause this problem.\n"
+msgstr "Una grabación en progreso, timehift o algunas herramientas externas (como samba, nfsd, transmisión, etc.) pueden causar este problema.\n"
+
+msgid "Please stop this actions/applications and try again!"
+msgstr "Por favor, finaliza estas acciones/aplicaciones y vuelve a intentarlo!"
+
 msgid "Create and flash complete images of your system."
 msgstr "Crea y flashea imágenes completas de su sistema."
 
@@ -456,8 +465,8 @@ msgstr "Desmontar"
 msgid "Mount manager"
 msgstr "Administrador de montajes"
 
-msgid "Failed mount, complete reset to mount or press green key (set mounts)."
-msgstr "Montaje fallido, reinicia completo para montar o pulsa tecla verde (configurar montajes)."
+msgid "The mount failed, completely restart the receiver to reassemble it, or press the green key (set up mounts) to mount as /media/hdd../media/usb...etc."
+msgstr "Falló el montaje, reinicie completamente el receptor para volver a montarlo o presione la tecla verde (configurar montajes) para montar como /media/hdd../media/usb...etc."
 
 msgid "Mount: "
 msgstr "Montar: "

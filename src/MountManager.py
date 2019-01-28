@@ -209,7 +209,7 @@ class VIXDevicesPanel(Screen):
 
             f.close()
             if not mountok:
-                self.session.open(MessageBox, _('Montaje fallido reinicia para montar o usa boton verde configurar montajes.'), MessageBox.TYPE_INFO, timeout=10)
+                self.session.open(MessageBox, _('Montaje fallido, reinicia completo para montar o pulsa tecla verde "configurar montajes".'), MessageBox.TYPE_INFO, timeout=10)
             self.updateList()
 
     def Unmount(self):
@@ -228,7 +228,7 @@ class VIXDevicesPanel(Screen):
                 for line in mountcheck:
                     parts = line.strip().split(' ')
                     if path.realpath(parts[0]).startswith(device):
-                        self.session.open(MessageBox, _("No se puede desmontar la particion; Asegurese de que no se esta utilizando para SWAP o registro/timeshift rutas."), MessageBox.TYPE_INFO)
+                        self.session.open(MessageBox, _("No se puede desmontar la particion; Asegurese de que no se esta utilizando para SWAP o rutas registro/timeshift."), MessageBox.TYPE_INFO)
 
             except IOError:
                 return -1

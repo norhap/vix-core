@@ -986,10 +986,10 @@ msgid "Query before starting image backup."
 msgstr "Consulta antes de iniciar la copia de imagen."
 
 msgid "Max backups to keep (0==all)"
-msgstr "Máximas copias de seguridad para mantener (0==todas)"
+msgstr "Máximas copias de seguridad para mantener (0=todas)"
 
 msgid "Max image backups to keep (0==all)"
-msgstr "Máximo de copias de imagen para mantener (0==todas)"
+msgstr "Máximo de copias de imagen para mantener (0=todas)"
 
 msgid "Backups to keep"
 msgstr "Copias de seguridad para mantener"

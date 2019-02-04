@@ -999,3 +999,49 @@ msgstr "Desea Reiniciar Enigma2 ahora ?"
 
 msgid "Restart GUI."
 msgstr "Reiniciar GUI."
+
+msgid "Press Init to format SDcard."
+msgstr "Presione Inicializar para formatear la tarjeta SD."
+
+msgid "Init SDCARD"
+msgstr "Inicializar SDCARD"
+
+msgid "Init SDcard"
+msgstr "Inicializar SDcard"
+
+#, python-format
+msgid "Are you sure you want to delete image slot %s ?"
+msgstr "¿Estás seguro que deseas eliminar la imagen slot1 %s ?"
+
+msgid "MultiBoot manager"
+msgstr "Administrador Arranque Múltiple"
+
+msgid "Multiboot ERROR! - no STARTUP in boot partition."
+msgstr "Arranque Múltiple ERROR! - No hay STARTUP en la partición de arranque."
+
+msgid "Multiboot image manager"
+msgstr "Administrador de arranque múltiple"
+
+msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
+msgstr "Administrador de inicio múltiple - No se puede inicializar la tarjeta SD cuando se ejecuta la imagen en la tarjeta SD."
+
+msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
+msgstr "Administrador de arranque múltiple - ejecución de inicialización de tarjeta SD, reinicie OpenViX."
+
+msgid "Multiboot manager - The SDcard must be at least 8MB."
+msgstr "Administrador de arranque múltiple: la tarjeta SD debe tener al menos 8 MB."
+
+msgid "Multiboot only able to restore this backup to mmc slot1"
+msgstr "Arranque múltiple solo puede restaurar esta copia de seguridad en mmc slot1"
+
+msgid "Empty slot"
+msgstr "Slot Vacío"
+
+msgid "Use the cursor keys to select an installed image and then Erase button."
+msgstr "Use las teclas del cursor para seleccionar una imagen instalada y luego el botón Borrar."
+
+msgid "Note: slot list does not show current image or empty slots."
+msgstr "Nota: la lista de slots no muestra la imagen actual o las slots vacías."
+
+msgid "Retrieving image slots - Please wait..."
+msgstr "Recuperando slots de imágenes - Por favor espere ..."

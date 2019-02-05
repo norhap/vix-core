@@ -756,3 +756,36 @@ msgstr ""
 
 msgid "Time of Backup to start"
 msgstr ""
+
+msgid "Multiboot ERROR! - no STARTUP in boot partition."
+msgstr ""
+
+msgid "Multiboot image manager"
+msgstr ""
+
+msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
+msgstr ""
+
+msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
+msgstr ""
+
+msgid "Multiboot manager - The SDcard must be at least 8MB."
+msgstr ""
+
+msgid "Multiboot only able to restore this backup to mmc slot1"
+msgstr ""
+
+msgid "Empty slot"
+msgstr ""
+
+msgid "Use the cursor keys to select an installed image and then Erase button."
+msgstr ""
+
+msgid "Note: slot list does not show current image or empty slots."
+msgstr ""
+
+msgid "Retrieving image slots - Please wait..."
+msgstr ""
+
+msgid "OFGwrite error (also sent to any debug log):\n%s"
+msgstr ""

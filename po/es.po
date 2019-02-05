@@ -1013,9 +1013,6 @@ msgstr "Inicializar SDcard"
 msgid "Are you sure you want to delete image slot %s ?"
 msgstr "¿Estás seguro que deseas eliminar la imagen slot1 %s ?"
 
-msgid "MultiBoot manager"
-msgstr "Administrador Multiboot"
-
 msgid "Multiboot ERROR! - no STARTUP in boot partition."
 msgstr "Multiboot ERROR! - No hay STARTUP en la partición de arranque."
 
@@ -1045,3 +1042,6 @@ msgstr "Nota: la lista de slots no muestra la imagen actual o los slots vacíos.
 
 msgid "Retrieving image slots - Please wait..."
 msgstr "Recuperando slots de imágenes - Por favor espere ..."
+
+msgid "OFGwrite error (also sent to any debug log):\n%s"
+msgstr "Error OFGwrite (también enviado a cualquier registro de depuración):\n%s"

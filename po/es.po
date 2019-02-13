@@ -626,9 +626,6 @@ msgstr "Ejecutar"
 msgid "Run your shell scripts."
 msgstr "Ejecutar scripts de shell."
 
-msgid "SDcard detected but not formatted for multiboot - please use ViX MultiBoot Manager to format."
-msgstr "Se detectó una tarjeta SD pero no se formateó para el arranque múltiple: use ViX Administrador Multiboot para formatear."
-
 msgid "Save"
 msgstr "Guardar"
 

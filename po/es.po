@@ -330,8 +330,8 @@ msgstr "Habilitar SWAP al iniciar sistema"
 msgid "Enable frozen check"
 msgstr "Activar comprobar softcam"
 
-msgid "Enough Retries, delaying till next schedule."
-msgstr "Suficientes reintentos. Se eperará hasta la proxima programación."
+msgid "Enough retries, delaying till next schedule."
+msgstr "Suficientes reintentos, retrasando hasta el próximo horario."
 
 msgid "Exit the restore wizard"
 msgstr "Salir del asistente de restauración"
@@ -1042,3 +1042,9 @@ msgstr "Recuperando slots de imágenes - Por favor espere ..."
 
 msgid "OFGwrite error (also sent to any debug log):\n%s"
 msgstr "Error OFGwrite (también enviado a cualquier registro de depuración):\n%s"
+
+msgid "You have decided not to flash image."
+msgstr "Has decidido no flashear la imagen."
+
+msgid "Please wait while the flash prepares."
+msgstr "Por favor espere mientras se prepara el flash.."

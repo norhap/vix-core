@@ -789,3 +789,9 @@ msgstr ""
 
 msgid "OFGwrite error (also sent to any debug log):\n%s"
 msgstr ""
+
+msgid "You have decided not to flash image."
+msgstr ""
+
+msgid "Please wait while the flash prepares."
+msgstr ""

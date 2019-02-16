@@ -45,8 +45,8 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-msgid "A background update check is is progress, please wait for retry."
-msgstr "Hay una actualización en curso. Por favor espera un poco y vuelve a intentarlo."
+msgid "A background update check is in progress, please try again."
+msgstr "Se está realizando una verificación de actualización en segundo plano, inténtalo de nuevo."
 
 msgid "A backup has been detected."
 msgstr "Copia de seguridad detectada."

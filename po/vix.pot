@@ -38,7 +38,7 @@ msgstr ""
 msgid "96 Mb"
 msgstr ""
 
-msgid "A background update check is is progress, please wait for retry."
+msgid "A background update check is in progress, please try again."
 msgstr ""
 
 msgid "Activate"

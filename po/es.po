@@ -1048,3 +1048,6 @@ msgstr "Has decidido no flashear la imagen."
 
 msgid "Please wait while the flash prepares."
 msgstr "Por favor espere mientras se prepara el flash."
+
+msgid "Erase"
+msgstr "Borrar"

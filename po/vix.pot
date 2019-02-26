@@ -795,3 +795,6 @@ msgstr ""
 
 msgid "Please wait while the flash prepares."
 msgstr ""
+
+msgid "Erase"
+msgstr ""

@@ -1032,7 +1032,7 @@ msgid "Empty slot"
 msgstr "Slot Vacío"
 
 msgid "Use the cursor keys to select an installed image and then Erase button."
-msgstr "Use las teclas del cursor para seleccionar una imagen instalada y luego el botón Borrar."
+msgstr "Use botones del cursor para seleccionar una imagen instalada y luego el botón Borrar."
 
 msgid "Note: slot list does not show current image or empty slots."
 msgstr "Nota: la lista de slots no muestra la imagen actual o los slots vacíos."

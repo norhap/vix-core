@@ -1051,3 +1051,6 @@ msgstr "Por favor espere mientras se prepara el flash."
 
 msgid "Erase"
 msgstr "Borrar"
+
+msgid "Create empty slot."
+msgstr "Crear slot vacío."

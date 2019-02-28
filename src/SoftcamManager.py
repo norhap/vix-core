@@ -257,7 +257,7 @@ class VIXSoftcamManager(Screen):
 				elif selcam.lower().startswith('scam'):
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 				else:
-					self.session.open(MessageBox, _("Found non-standard softcam, trying to start, this may fail."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+					self.session.open(MessageBox, _("Se ha encontrado un softcam no estandar, al intentar iniciarse, esto puede fallar."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 					self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			else:
 				self.session.openWithCallback(self.showActivecam, VIXStopCam, self.sel[0])
@@ -311,7 +311,7 @@ class VIXSoftcamManager(Screen):
 			elif selectedcam.lower().startswith('scam'):
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 			elif not selectedcam.lower().startswith('cccam') or selectedcam.lower().startswith('oscam') or selectedcam.lower().startswith('mgcamd'):
-				self.session.open(MessageBox, _("Found non-standard softcam, trying to start, this may fail."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
+				self.session.open(MessageBox, _("Se ha encontrado un softcam no estandar, al intentar iniciarse, esto puede fallar."), MessageBox.TYPE_INFO, timeout=10, close_on_any_key=True)
 				self.session.openWithCallback(self.showActivecam, VIXStartCam, self.sel[0])
 
 	def showLog(self):

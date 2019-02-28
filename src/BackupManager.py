@@ -523,7 +523,7 @@ class VIXBackupManager(Screen):
 			self.Stage2Completed = True
 		elif result.find('Collected errors') != -1: # none of the above errors. What condition requires this to loop? Maybe double key press.
 			AddPopupWithCallback(self.Stage2,
-								 _("A background update check is in progress, please try again."),
+								 _("Se esta realizando una chequeo de actualizacion en segundo plano, vuelva a intentarlo."),
 								 MessageBox.TYPE_INFO,
 								 10,
 								 NOPLUGINS

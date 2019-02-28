@@ -82,9 +82,9 @@ class MultiBoot(Screen):
 			}, -1)
 		else:
 			self["key_red"] = StaticText(_("Cancel"))
-			self["labe14"] = StaticText(_("Use the cursor keys to select an installed image and then Erase button."))
-			self["labe15"] = StaticText(_("Note: slot list does not show current image or empty slots."))
-			self["key_green"] = StaticText(_("Erase"))
+			self["labe14"] = StaticText(_("Use botones del cursor para seleccionar una imagen instalada y luego la tecla borrar."))
+			self["labe15"] = StaticText(_("Nota: la lista de ranuras no muestra la imagen actual o las ranuras vacias."))
+			self["key_green"] = StaticText(_("Borrar"))
 			if SystemInfo["HasSDmmc"]:
 				self["key_yellow"] = StaticText(_("Init SDcard"))
 			else:
@@ -163,7 +163,7 @@ class MultiBoot(Screen):
 						self.session.open(MessageBox, _("Multiboot manager - The SDcard must be at least 8MB."), MessageBox.TYPE_INFO, timeout=10)
 						self.close
 					else:
-						self.session.open(MessageBox, _("Multiboot manager - SDcard initialization run, please restart OpenViX."), MessageBox.TYPE_INFO, timeout=10)
+						self.session.open(MessageBox, _("Administrador Multiboot - ejecutando inicializar tarjeta SD, reinicie OpenViX."), MessageBox.TYPE_INFO, timeout=10)
 						cmdlist = []
 						cmdlist.append("dd if=/dev/zero of=/dev/sda bs=512 count=1 conv=notrunc")
 						cmdlist.append("rm -f /tmp/init.sh")

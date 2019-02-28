@@ -48,9 +48,6 @@ msgstr "8 Mb"
 msgid "96 Mb"
 msgstr "96 Mb"
 
-msgid "A background update check is in progress, please try again."
-msgstr "Se está realizando una verificación de actualización en segundo plano, inténtalo de nuevo."
-
 msgid "A backup has been detected."
 msgstr "Copia de seguridad detectada."
 
@@ -350,9 +347,6 @@ msgstr "Confirmación Flash"
 
 msgid "Flash image unzip successful."
 msgstr "Descomprimida imagen Flash con éxito."
-
-msgid "Found non-standard softcam, trying to start, this may fail."
-msgstr "Se encontró un softcam no estándar, al intentar iniciarse, esto puede fallar."
 
 msgid "Free space:"
 msgstr "Espacio libre:"
@@ -783,9 +777,6 @@ msgstr "El asistente ha terminado, el receptor va a reiniciar."
 msgid "The wizard is finished now."
 msgstr "El asistente ha terminado ahora pulsa OK para continuar."
 
-msgid "There is a problem with this device. Please reformat it and try again."
-msgstr "Hay un problema con este dispositivo. Por favor reformatealo y vuelve a intentarlo."
-
 msgid "There is no backup to delete."
 msgstr "No hay una copia de seguridad para eliminar."
 
@@ -1022,9 +1013,6 @@ msgstr "Multiboot administrador imagen"
 msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
 msgstr "Administrador Multiboot - No se puede inicializar la tarjeta SD cuando se ejecuta la imagen en la tarjeta SD."
 
-msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
-msgstr "Administrador Multiboot - ejecución de inicialización de tarjeta SD, reinicie OpenViX."
-
 msgid "Multiboot manager - The SDcard must be at least 8MB."
 msgstr "Administrador Multiboot: la tarjeta SD debe tener al menos 8 MB."
 
@@ -1033,12 +1021,6 @@ msgstr "Multiboot solo puede restaurar esta copia de seguridad en mmc ranura1"
 
 msgid "Empty slot"
 msgstr "Ranura vacía"
-
-msgid "Use the cursor keys to select an installed image and then Erase button."
-msgstr "Use botones del cursor para seleccionar una imagen instalada y luego el botón Borrar."
-
-msgid "Note: slot list does not show current image or empty slots."
-msgstr "Nota: en lista de ranura no muestra la imagen actual o las ranuras están vacías."
 
 msgid "Retrieving image slots - Please wait..."
 msgstr "Recuperando ranuras de imágenes - Por favor espere ..."
@@ -1056,14 +1038,8 @@ msgstr "Has decidido no flashear la imagen."
 msgid "Please wait while the flash prepares."
 msgstr "Por favor espere mientras se prepara el flash."
 
-msgid "Erase"
-msgstr "Borrar"
-
 msgid "Create empty slot."
 msgstr "Crear ranura vacía."
-
-msgid "multiboot manager"
-msgstr "Administrador Multiboot"
 
 msgid "MultiBoot manager"
 msgstr "Administrador Multiboot"

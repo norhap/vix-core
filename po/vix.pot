@@ -36,9 +36,6 @@ msgstr ""
 msgid "96 Mb"
 msgstr ""
 
-msgid "A background update check is in progress, please try again."
-msgstr ""
-
 msgid "A backup has been detected."
 msgstr ""
 
@@ -326,9 +323,6 @@ msgid "Flash confirmation"
 msgstr ""
 
 msgid "Flash image unzip successful."
-msgstr ""
-
-msgid "Found non-standard softcam, trying to start, this may fail."
 msgstr ""
 
 msgid "Free space:"
@@ -777,9 +771,6 @@ msgstr ""
 msgid "The wizard is finished now."
 msgstr ""
 
-msgid "There is a problem with this device. Please reformat it and try again."
-msgstr ""
-
 msgid "There is no backup to delete."
 msgstr ""
 
@@ -1011,9 +1002,6 @@ msgid ""
 "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
 msgstr ""
 
-msgid "Multiboot manager - SDcard initialization run, please restart OpenViX."
-msgstr ""
-
 msgid "Multiboot manager - The SDcard must be at least 8MB."
 msgstr ""
 
@@ -1021,12 +1009,6 @@ msgid "Multiboot only able to restore this backup to mmc slot1"
 msgstr ""
 
 msgid "Empty slot"
-msgstr ""
-
-msgid "Use the cursor keys to select an installed image and then Erase button."
-msgstr ""
-
-msgid "Note: slot list does not show current image or empty slots."
 msgstr ""
 
 msgid "Retrieving image slots - Please wait..."
@@ -1043,13 +1025,7 @@ msgstr ""
 msgid "Please wait while the flash prepares."
 msgstr ""
 
-msgid "Erase"
-msgstr ""
-
 msgid "Create empty slot."
-msgstr ""
-
-msgid "multiboot manager"
 msgstr ""
 
 msgid "MultiBoot manager"

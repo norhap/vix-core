@@ -1064,3 +1064,6 @@ msgstr "Crear ranura vacía."
 
 msgid "multiBoot manager"
 msgstr "Administrador Multiboot"
+
+msgid "MultiBoot manager"
+msgstr "Administrador Multiboot"

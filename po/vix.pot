@@ -1051,3 +1051,6 @@ msgstr ""
 
 msgid "multiBoot manager"
 msgstr ""
+
+msgid "MultiBoot manager"
+msgstr ""

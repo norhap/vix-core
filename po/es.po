@@ -178,7 +178,7 @@ msgid "Backup location"
 msgstr "Ubicación de las copias de seguridad"
 
 msgid "Backup manager"
-msgstr "Administrador Copias de Configuración"
+msgstr "Administrador de copias configuración"
 
 msgid "Backup manager Log"
 msgstr "Historial de copias de seguridad"
@@ -466,7 +466,7 @@ msgid "Un-mount"
 msgstr "Desmontar"
 
 msgid "Mount manager"
-msgstr "Administrador de Montajes"
+msgstr "Administrador de montajes"
 
 msgid "The mount failed, completely restart the receiver to reassemble it, or press the green key (set up mounts) to mount as /media/hdd../media/usb...etc."
 msgstr "Falló el montaje, reinicie completamente el receptor para volver a montarlo o presione la tecla verde (configurar montajes) para montar como /media/hdd../media/usb...etc."
@@ -636,7 +636,7 @@ msgid "Schedule backups"
 msgstr "Programar copias de seguridad"
 
 msgid "Script runner"
-msgstr "Ejecutar Scripts"
+msgstr "Ejecuciones de Scripts"
 
 msgid "Script Runner Setup"
 msgstr "Configuración Ejecuciones de Scripts"
@@ -757,7 +757,7 @@ msgid "Swap File not found. You have to create the file before to activate."
 msgstr "Archivo de intercambio no encontrado. Hay que crearlo antes de activarlo."
 
 msgid "SWAP manager"
-msgstr "Administrador SWAP"
+msgstr "SWAP Administrador"
 
 msgid "SWAP place:"
 msgstr "Destino SWAP:"
@@ -1062,11 +1062,11 @@ msgstr "Borrar"
 msgid "Create empty slot."
 msgstr "Crear ranura vacía."
 
-msgid "MultiBoot manager"
+msgid "multiboot manager"
 msgstr "Administrador Multiboot"
 
-msgid "H9SDcard manager"
-msgstr "Administrador H9SDcard"
+msgid "MultiBoot manager"
+msgstr "Administrador Multiboot"
 
 msgid "Move Nand root to SD card"
 msgstr "Mover la raíz Nand a la tarjeta SD"

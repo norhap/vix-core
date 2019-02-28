@@ -1049,7 +1049,7 @@ msgstr ""
 msgid "Create empty slot."
 msgstr ""
 
-msgid "H9SDcard manager"
+msgid "multiboot manager"
 msgstr ""
 
 msgid "MultiBoot manager"
@@ -1057,3 +1057,4 @@ msgstr ""
 
 msgid "Move Nand root to SD card"
 msgstr ""
+

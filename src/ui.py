@@ -136,7 +136,7 @@ class VIXMenu(Screen, ProtectedScreen):
 				elif currentEntry == "Administrador de Imagen":
 					from ImageManager import VIXImageManager
 					self.session.open(VIXImageManager, self.menu_path)
-				elif currentEntry == "Administrador Multiboot":
+				elif currentEntry == "multiboot manager":
 					from Multibootmgr import MultiBoot
 					self.session.open(MultiBoot, self.menu_path)
 				elif currentEntry == "H9SDcard manager":

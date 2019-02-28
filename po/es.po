@@ -1062,8 +1062,11 @@ msgstr "Borrar"
 msgid "Create empty slot."
 msgstr "Crear ranura vacía."
 
-msgid "multiBoot manager"
+msgid "multiboot manager"
 msgstr "Administrador Multiboot"
 
 msgid "MultiBoot manager"
 msgstr "Administrador Multiboot"
+
+msgid "Move Nand root to SD card"
+msgstr "Mover la raíz Nand a la tarjeta SD"

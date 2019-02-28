@@ -1061,3 +1061,6 @@ msgstr "Borrar"
 
 msgid "Create empty slot."
 msgstr "Crear ranura vacía."
+
+msgid "multiBoot manager"
+msgstr "Administrador Multiboot"

@@ -1048,3 +1048,6 @@ msgstr ""
 
 msgid "Create empty slot."
 msgstr ""
+
+msgid "multiBoot manager"
+msgstr ""

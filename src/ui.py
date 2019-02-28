@@ -64,14 +64,14 @@ class VIXMenu(Screen, ProtectedScreen):
 		self.menu = args
 		self.list = []
 		if self.menu == 0:
-			self.list.append(("Administrador Copias de Configuración", _("Backup manager"), _("Manage the backups of your settings."), None))
-			self.list.append(("Administrador de Imagen", _("Image manager"), _("Create and flash complete images of your system."), None))
+			self.list.append(("Backup manager", _("Backup manager"), _("Manage the backups of your settings."), None))
+			self.list.append(("Image manager", _("Image manager"), _("Create and flash complete images of your system."), None))
 			self.list.append(("Instalar IPKG", _("Install local extension"), _("Install IPK's from your tmp folder."), None))
-			self.list.append(("Administrador de Montajes", _("Mount manager"), _("Manage your devices mount points."), None))
-			self.list.append(("Ejecutar Scripts", _("Script runner"), _("Run your shell scripts."), None))
-			self.list.append(("Administrador SWAP", _("SWAP manager"), _("Create and Manage your SWAP files."), None))
+			self.list.append(("Mount manager", _("Mount manager"), _("Manage your devices mount points."), None))
+			self.list.append(("Script runner", _("Script runner"), _("Run your shell scripts."), None))
+			self.list.append(("SWAP manager", _("SWAP manager"), _("Create and Manage your SWAP files."), None))
 			if SystemInfo["canMultiBoot"]:
-				self.list.append(("multiboot manager", _("MultiBoot manager"), _("Create empty slot."), None))
+				self.list.append(("MultiBoot manager", _("MultiBoot manager"), _("Create empty slot."), None))
  			if SystemInfo["HasH9SD"]:
 				self.list.append(("H9SDcard manager", _("H9SDcard Manager"), _("Move Nand root to SD card"), None))
 		self["menu"] = List(self.list)
@@ -130,13 +130,13 @@ class VIXMenu(Screen, ProtectedScreen):
 		if current:
 			currentEntry = current[0]
 			if self.menu == 0:
-				if currentEntry == "Administrador Copias de Configuración":
+				if currentEntry == "Backup manager":
 					from BackupManager import VIXBackupManager
 					self.session.open(VIXBackupManager, self.menu_path)
-				elif currentEntry == "Administrador de Imagen":
+				elif currentEntry == "Image manager":
 					from ImageManager import VIXImageManager
 					self.session.open(VIXImageManager, self.menu_path)
-				elif currentEntry == "multiboot manager":
+				elif currentEntry == "MultiBoot manager":
 					from Multibootmgr import MultiBoot
 					self.session.open(MultiBoot, self.menu_path)
 				elif currentEntry == "H9SDcard manager":
@@ -145,13 +145,13 @@ class VIXMenu(Screen, ProtectedScreen):
 				elif currentEntry == "Instalar IPKG":
 					from IPKInstaller import VIXIPKInstaller
 					self.session.open(VIXIPKInstaller, self.menu_path)
-				elif currentEntry == "Administrador de Montajes":
+				elif currentEntry == "Mount manager":
 					from MountManager import VIXDevicesPanel
 					self.session.open(VIXDevicesPanel, self.menu_path)
-				elif currentEntry == "Ejecutar Scripts":
+				elif currentEntry == "Script runner":
 					from ScriptRunner import VIXScriptRunner
 					self.session.open(VIXScriptRunner, None, self.menu_path)
-				elif currentEntry == "Administrador SWAP":
+				elif currentEntry == "SWAP manager":
 					from SwapManager import VIXSwap
 					self.session.open(VIXSwap, self.menu_path)
 

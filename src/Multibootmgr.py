@@ -36,7 +36,7 @@ class MultiBoot(Screen):
 	def __init__(self, session,menu_path=""):
 		Screen.__init__(self, session)
 		self.skinName = "MultiBoot"
-		screentitle = _("Multiboot image manager")
+		screentitle = _("Multiboot Administrador Imagen")
 
 		self.menu_path = menu_path
 		if config.usage.show_menupath.value == 'large':

@@ -995,9 +995,6 @@ msgstr ""
 msgid "Multiboot ERROR! - no STARTUP in boot partition."
 msgstr ""
 
-msgid "Multiboot image manager"
-msgstr ""
-
 msgid ""
 "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
 msgstr ""

@@ -1007,9 +1007,6 @@ msgstr "¿Estás seguro que deseas eliminar la imagen ranura %s ?"
 msgid "Multiboot ERROR! - no STARTUP in boot partition."
 msgstr "Multiboot ERROR! - No hay STARTUP en la partición de arranque."
 
-msgid "Multiboot image manager"
-msgstr "Multiboot administrador imagen"
-
 msgid "Multiboot manager - Cannot initialize SDcard when running image on SDcard."
 msgstr "Administrador Multiboot - No se puede inicializar la tarjeta SD cuando se ejecuta la imagen en la tarjeta SD."
 

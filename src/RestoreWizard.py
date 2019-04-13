@@ -1,6 +1,5 @@
 # for localized messages
 from os import listdir, path, walk, stat
-from enigma import eDVBDB, quitMainloop
 from boxbranding import getMachineBrand, getMachineName
 
 from . import _
@@ -127,7 +126,7 @@ class RestoreWizard(WizardLanguage, Rc):
 
 	def buildList(self, action):
 		if self.NextStep is 'reboot':
-			quitMainloop(2)
+			self.Console.ePopen("killall -9 enigma2 && init 6")
 		elif self.NextStep is 'settingsquestion' or self.NextStep is 'settingsrestore' or self.NextStep is 'pluginsquestion' or self.NextStep is 'pluginsrestoredevice' or self.NextStep is 'end' or self.NextStep is 'noplugins':
 			self.buildListfinishedCB(False)
 		elif self.NextStep is 'settingrestorestarted':
@@ -148,18 +147,12 @@ class RestoreWizard(WizardLanguage, Rc):
 				self.buildListRef.setTitle(_("Restore wizard"))
 			elif self.feeds == 'DOWN':
 				print '[RestoreWizard] Stage 6: Feeds Down'
-				config.misc.restorewizardrun.setValue(True)
-				config.misc.restorewizardrun.save()
-				configfile.save()
 				self.didPluginRestore = True
 				self.NextStep = 'reboot'
 				self.buildListRef = self.session.openWithCallback(self.buildListfinishedCB, MessageBox, _("Sorry the feeds are down for maintenance. Please try using Backup manager to restore plugins later."), type=MessageBox.TYPE_INFO, timeout=30, wizard=True)
 				self.buildListRef.setTitle(_("Restore wizard"))
 			elif self.feeds == 'BAD':
 				print '[RestoreWizard] Stage 6: No Network'
-				config.misc.restorewizardrun.setValue(True)
-				config.misc.restorewizardrun.save()
-				configfile.save()
 				self.didPluginRestore = True
 				self.NextStep = 'reboot'
 				self.buildListRef = self.session.openWithCallback(self.buildListfinishedCB, MessageBox, _("Your %s %s is not connected to the Internet. Please try using Backup manager to restore plugins later.") % (getMachineBrand(), getMachineName()), type=MessageBox.TYPE_INFO, timeout=30, wizard=True)
@@ -210,15 +203,7 @@ class RestoreWizard(WizardLanguage, Rc):
 
 	def settingRestore_Finished(self, result, retval, extra_args=None):
 		self.didSettingsRestore = True
-		eDVBDB.getInstance().reloadServicelist()
-		eDVBDB.getInstance().reloadBouquets()
-		self.session.nav.PowerTimer.loadTimer()
-# Don't check RecordTimers for conflicts. On a restore we may
-# not have the correct tuner configuration (and no USB tuners)...
-#
-		self.session.nav.RecordTimer.loadTimer(justLoad=True)
-		configfile.load()
-		# self.NextStep = 'plugindetection'
+		network = [x.split(" ")[3] for x in open("/etc/network/interfaces").read().splitlines() if x.startswith("iface eth0")]
 		self.pleaseWait.close()
 		self.doRestorePlugins1()
 
@@ -228,9 +213,6 @@ class RestoreWizard(WizardLanguage, Rc):
 	def pluginsRestore_Finished(self, result, retval, extra_args=None):
 		if result:
 			print "[RestoreWizard] opkg install result:\n", result
-		config.misc.restorewizardrun.setValue(True)
-		config.misc.restorewizardrun.save()
-		configfile.save()
 		self.didPluginRestore = True
 		self.NextStep = 'reboot'
 		self.buildListRef.close(True)

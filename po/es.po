@@ -772,7 +772,7 @@ msgid "The chosen location does not exist, using /media/hdd"
 msgstr "El destino elegido no existe. Se usará /media/hdd"
 
 msgid "The wizard is finished now, and will reboot."
-msgstr "El asistente ha terminado, el receptor va a Reiniciar."
+msgstr "El asistente ha terminado, el Receptor va a Reiniciar."
 
 msgid "The wizard is finished now."
 msgstr "El asistente ha terminado ahora pulsa OK para continuar."

@@ -978,7 +978,7 @@ class ImageBackup(Screen):
 		print '[ImageManager] Stage2: Making Root Image.'
 		if "jffs2" in self.ROOTFSFILE:
 			print '[ImageManager] Stage2: JFFS2 Detected.'
-			self.ROOTFSTYPE = 'ubifs'
+			self.ROOTFSTYPE = 'jffs2'
 			if getMachineBuild() == 'gb800solo':
 				JFFS2OPTIONS = " --disable-compressor=lzo -e131072 -l -p125829120"
 			else:
@@ -1004,7 +1004,7 @@ class ImageBackup(Screen):
 				print '[ImageManager] Stage2: Create: rescue dump rescue.bin:',self.MODEL
 		else:
 			print '[ImageManager] Stage2: UBIFS Detected.'
-			self.ROOTFSTYPE = 'jffs2'
+			self.ROOTFSTYPE = 'ubifs'
 			output = open('%s/ubinize.cfg' % self.WORKDIR, 'w')
 			output.write('[ubifs]\n')
 			output.write('mode=ubi\n')
@@ -1018,6 +1018,7 @@ class ImageBackup(Screen):
 			if getMachineBuild() in ("h9","i55plus"):
 				z = open('/proc/cmdline', 'r').read()
 				if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z: 
+					self.ROOTFSTYPE = "tar.bz2"
 					self.commands.append("/bin/tar -cf %s/rootfs.tar -C %s/root --exclude ./var/nmbd --exclude ./.resizerootfs --exclude ./.resize-rootfs --exclude ./.resize-linuxrootfs --exclude ./.resize-userdata --exclude ./var/lib/samba/private/msg.sock ." % (self.WORKDIR, self.TMPDIR))
 					self.commands.append("/usr/bin/bzip2 %s/rootfs.tar" % self.WORKDIR)
 				else:
@@ -1245,7 +1246,7 @@ class ImageBackup(Screen):
 			system('cp -f /usr/share/bootargs.bin %s/bootargs.bin' %(self.MAINDEST2))
 			z = open('/proc/cmdline', 'r').read()
 			if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z: 
-				move('%s/rootfs.tar.bz2' % self.WORKDIR, '%s/%s' % (self.MAINDEST, self.ROOTFSFILE))
+				move('%s/rootfs.tar.bz2' % self.WORKDIR, '%s/rootfs.tar.bz2' % (self.MAINDEST))
 			else:
 				move('%s/rootfs.%s' % (self.WORKDIR, self.ROOTFSTYPE), '%s/%s' % (self.MAINDEST, self.ROOTFSFILE))
 		else:
@@ -1305,7 +1306,7 @@ class ImageBackup(Screen):
 			remove(self.swapdevice + config.imagemanager.folderprefix.value + '-' + getImageType() + "-swapfile_backup")
 		if path.exists(self.WORKDIR):
 			rmtree(self.WORKDIR)
-		if (path.exists(self.MAINDEST + '/' + self.ROOTFSFILE) and path.exists(self.MAINDEST + '/' + self.KERNELFILE)) or (self.EMMCIMG == "emmc.img" and path.exists('%s/disk.img' % self.MAINDEST)):
+		if (path.exists(self.MAINDEST + '/' + self.ROOTFSFILE) and path.exists(self.MAINDEST + '/' + self.KERNELFILE)) or (getMachineBuild() in ("h9","i55plus") and "root=/dev/mmcblk0p1" in z):
 			for root, dirs, files in walk(self.MAINDEST):
 				for momo in dirs:
 					chmod(path.join(root, momo), 0644)
@@ -1428,118 +1429,6 @@ class ImageManagerDownload(Screen):
 
 			import urllib2
 			from bs4 import BeautifulSoup
-
-#			supportedMachines = {
-#				'axodinc'         : 'Opticum-AX-ODIN-DVBC-1',
-#				'dinobot4kmini'   : 'dinobot4kmini',
-#				'dinobot4kplus'   : 'dinobot4kplus',
-#				'et10000'         : 'ET-10x00',
-#				'et4x00'          : 'ET-4x00',
-#				'et5x00'          : 'ET-5x00',
-#				'et6x00'          : 'ET-6x00',
-#				'et7x00'          : 'ET-7x00',
-#				'et8000'          : 'ET-8000',
-#				'et8500'          : 'ET-8500',
-#				'et9x00'          : 'ET-9x00',
-#				'formuler4turbo'  : 'Formuler4turbo',
-#				'formuler1'       : 'Formuler1',
-#				'formuler1tc'     : 'Formuler1tc',
-#				'gb800se'         : 'GiGaBlue-HD800SE',
-#				'gb800seplus'     : 'GiGaBlue-HD800SE-PLUS',
-#				'gb800ue'         : 'GiGaBlue-HD800UE',
-#				'gb800ueplus'     : 'GiGaBlue-HD800UE-PLUS',
-#				'gbquad'          : 'GiGaBlue-HD-QUAD',
-#				'gbquadplus'      : 'GiGaBlue-HD-QUAD-PLUS',
-#				'gbquad4k'        : 'GiGaBlue-UHD-QUAD-4K',
-#				'gbue4k'          : 'GiGaBlue-UHD-UE-4K',
-#				'gbultraue'       : 'GiGaBlue-HD-ULTRA-UE',
-#				'gbx1'            : 'GiGaBlue-HD-X1',
-#				'gbx2'            : 'GiGaBlue-HD-X2',
-#				'gbx3'            : 'GiGaBlue-HD-X3',
-#				'gbx3h'           : 'GiGaBlue-HD-X3H',
-#				'iqonios100hd'    : 'iqon-IOS-100HD',
-#				'iqonios200hd'    : 'iqon-IOS-200HD',
-#				'iqonios300hd'    : 'iqon-IOS-300HD',
-#				'ixusszero'       : 'Medialink-IXUSS-ZERO',
-#				'maram9'          : 'Mara-M9',
-#				'mbhybrid'        : 'Miraclebox-Mini-Hybrid',
-#				'mbmicro'         : 'Miraclebox-Micro',
-#				'mbmicrov2'       : 'Miraclebox-Microv2',
-#				'mbmini'          : 'Miraclebox-Mini',
-#				'mbminiplus'      : 'Miraclebox-MiniPlus',
-#				'mbtwin'          : 'Miraclebox-Twin',
-#				'mbtwinplus'      : 'Miraclebox-Twinplus',
-#				'mbultra'         : 'Miraclebox-Ultra',
-#				'mutant11'        : 'Mutant-HD11',
-#				'mutant1200'      : 'Mutant-HD1200',
-#				'mutant1500'      : 'Mutant-HD1500',
-#				'mutant2400'      : 'Mutant-HD2400',
-#				'mutant500c'      : 'Mutant-HD500C',
-#				'mutant51'        : 'Mutant-HD51',
-#				'osmega'          : 'OS-mega',
-#				'osmini'          : 'OS-mini',
-#				'osminiplus'      : 'OS-miniplus',
-#				'osnino'          : 'OS-nino',
-#				'osmio4k'         : 'OS-mio4k',
-#				'osninoplus'      : 'OS-ninoplus',
-#				'osninopro'       : 'OS-ninopro',				
-#				'qb800solo'       : 'GiGaBlue-HD800Solo',
-#				'sf8'             : 'OCTAGON-SF8-HD',
-#				'sf128'           : 'OCTAGON-SF128',
-#				'sf138'           : 'OCTAGON-SF138',
-#				'sf228'           : 'OCTAGON-SF228',
-#				'sf4008'          : 'OCTAGON-SF4008',
-#				'sf8008'          : 'OCTAGON-SF8008',
-#				'spycat'          : 'Spycat',
-#				'tiviaraplus'     : 'TiviarAlphaPlus',
-#				'tm2t'            : 'TM-2T',
-#				'tmnano'          : 'TM-Nano-OE',
-#				'tmnano2super'    : 'TM-Nano2-Super',
-#				'tmnano2t'        : 'TM-Nano-2T',
-#				'tmnano3t'        : 'TM-Nano-3T',
-#				'tmnanose'        : 'TM-Nano-SE',
-#				'tmnanosecombo'   : 'TM-Nano-SE-Combo',
-#				'tmnanosem2'      : 'TM-Nano-SE-M2',
-#				'tmnanosem2plus'  : 'TM-Nano-SE-M2-Plus',
-#				'tmnanom3'        : 'TM-Nano-M3',
-#				'tmnanoseplus'    : 'TM-Nano-SE-Plus',
-#				'tmsingle'        : 'TM-Single',
-#				'tmtwin'          : 'TM-Twin-OE',
-#				'tmtwin4k'        : 'TM-Twin-4K',
-#				'uniboxhde'       : 'Venton-Unibox-HDeco-PLUS',
-#				'ventonhdx'       : 'Venton-Unibox-HDx',
-#				'vipercombohdd'   : 'Amiko-Viper-Combo-HDD',				
-#				'vuduo'           : 'Vu+Duo',
-#				'vuduo2'          : 'Vu+Duo2',
-#				'vuduo4k'         : 'Vu+Duo4k',				
-#				'vusolo'          : 'Vu+Solo',
-#				'vusolo2'         : 'Vu+Solo2',
-#				'vusolo4k'        : 'Vu+Solo4K',
-#				'vusolose'        : 'Vu+Solo-SE',
-#				'vuultimo'        : 'Vu+Ultimo',
-#				'vuultimo4k'      : 'Vu+Ultimo4K',
-#				'vuuno'           : 'Vu+Uno',
-#				'vuuno4k'         : 'Vu+Uno4K',
-#				'vuuno4kse'       : 'Vu+Uno4KSE',
-#				'vuzero'          : 'Vu+Zero',
-#				'vuzero4k'        : 'Vu+Zero4K',
-#				'xp1000max'       : 'MaxDigital-XP1000',
-#				'xp1000plus'      : 'OCTAGON-XP1000PLUS',
-#				'xpeedlx'         : 'GI-Xpeed-LX',
-#				'xpeedlx3'        : 'GI-Xpeed-LX3',
-#				'zgemmah7'        : 'Zgemma-H7',
-#				'zgemmah9s'       : 'Zgemma-H9S',
-#				'zgemmah92s'      : 'Zgemma-H92S',
-#				'zgemmah92h'      : 'Zgemma-H92H',				
-#				'zgemmah9t'       : 'Zgemma-H9T'				
-#			}
-#			}
-#
-#			try:
-#				self.boxtype = supportedMachines[getMachineMake()]
-#			except:
-#				print "[ImageManager][populate_List] the %s is not currently supported by OpenViX." % getMachineMake()
-#				self.boxtype = 'UNKNOWN'
 
 			self.boxtype = getMachineMake()
 

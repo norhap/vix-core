@@ -79,7 +79,7 @@ class VIXDevicesPanel(Screen):
 				#if line.find('Mount') >= 0:
 				if _('Mount: ') in line:
 					if line.find('/media/hdd') < 0:
-						self["key_red"].setText(_("Use as HDD"))
+						self["key_red"].setText(_("HDD"))
 			except:
 				pass
 		if self.sel:
@@ -109,18 +109,16 @@ class VIXDevicesPanel(Screen):
             parts = line.strip().split()
             if not parts:
                 continue				
-            device = parts[3]			
-            if getMachineBuild() in ('sf5008', 'et13000', 'et11000','et1x000', 'duo4k', 'uno4k', 'uno4kse', 'ultimo4k', 'solo4k', 'zero4k', 'hd51', 'hd60', 'h9combo', 'dm820', 'dm7080', 'sf4008', 'dm900', 'dm920', 'gbquad4k', 'gbue4k', 'lunix3-4k', 'lunix4k', 'vs1500', 'h7', '8100s', 'e4hd') and re.search('mmcblk0p[1-9]', device):
-				mmc = True
-            else:
-		        mmc = False		
+            device = parts[3]
+            mmc = False			
+            if getMachineBuild() in ('sf5008', 'et13000', 'et11000','et1x000', 'duo4k', 'uno4k', 'uno4kse', 'ultimo4k', 'solo4k', 'zero4k', 'hd51', 'hd60', 'hd61', 'u5pvr', 'h9combo', 'dm820', 'dm7080', 'sf4008', 'dm900', 'dm920', 'gbquad4k', 'gbue4k', 'lunix3-4k', 'lunix4k', 'vs1500', 'h7', '8100s', 'e4hd') and re.search('mmcblk[0-9]p[1-9]', device):
+				mmc = True		
             if not mmc and not re.search('sd[a-z][1-9]', device):
                 continue				
             if device in list2:
                 continue
             self.buildMy_rec(device)
             list2.append(device)
-
         f.close()
         self['list'].list = self.list
         self['lab1'].hide()

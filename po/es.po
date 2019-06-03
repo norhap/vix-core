@@ -810,8 +810,8 @@ msgstr "Desmontar"
 msgid "Updating mount locations."
 msgstr "Actualizando destinos de montaje."
 
-msgid "Use as HDD"
-msgstr "Usar como HDD"
+msgid "HDD"
+msgstr "HDD"
 
 msgid "ViX"
 msgstr "ViX"

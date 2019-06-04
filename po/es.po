@@ -462,7 +462,7 @@ msgstr "Desmontar"
 msgid "Mount manager"
 msgstr "Administrador de montajes"
 
-msgid "The mount failed, completely restart the receiver to reassemble it, or press the green key (set up mounts) to mount as /media/hdd../media/usb...etc."
+msgid "The mount failed, completely restart the receiver to reassemble it, or press the green key (set up mounts) to mount as /media/hdd../media/usb..."
 msgstr "Falló el montaje, reinicie completamente el receptor para volver a montarlo o presione la tecla verde (configurar montajes) para montar como /media/hdd../media/usb...etc."
 
 msgid "Mount: "
@@ -810,8 +810,8 @@ msgstr "Desmontar"
 msgid "Updating mount locations."
 msgstr "Actualizando destinos de montaje."
 
-msgid "HDD"
-msgstr "HDD"
+msgid "Use as HDD"
+msgstr "Use como HDD"
 
 msgid "ViX"
 msgstr "ViX"
@@ -1047,3 +1047,27 @@ msgstr "Mover la raíz Nand a la tarjeta SD"
 msgid "Sorry, but the file is not compatible with this image version."
 msgstr "Lo sentimos, pero el backup no es compatible con OpenViX."
 
+msgid "Can't unmount partiton, make sure it is not being used for swap or record/timeshift paths!"
+msgstr "No se puede desmontar la partición, asegúrese de que no se esté utilizando para swap o grabar/timeshift en rutas!"
+
+msgid "Warning, this device is used for more than one mount point!\n"
+msgstr "Atención, este dispositivo se usa para más de un punto de montaje!\n"
+
+msgid "Really use and mount %s as HDD ?"
+msgstr "Realmente usar y montar %s como HDD?"
+
+msgid "This Device is already mounted as HDD."
+msgstr "Este dispositivo ya está montado como HDD."
+
+msgid "Please wait while scanning your %s %s devices..."
+msgstr "Espera mientras escaneas sus dispositivos %s %s..."
+
+msgid "Updating mount locations..."
+msgstr "Actualizando ubicaciones de montaje..."
+
+msgid ""
+"The changes need a system restart to take effect.\n"
+"Restart your %s %s now?"
+msgstr ""
+"Los cambios necesitan un reinicio del sistema para que tenga efecto.\n"
+"Reiniciar su %s %s ahora?"

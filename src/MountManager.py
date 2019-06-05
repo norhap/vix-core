@@ -10,6 +10,7 @@ from . import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
+from Screens.ChoiceBox import ChoiceBox
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.ConfigList import ConfigListScreen
@@ -21,6 +22,7 @@ from Components.Harddisk import Harddisk
 from Components.SystemInfo import SystemInfo
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import SCOPE_ACTIVE_SKIN, resolveFilename, pathExists
+import os
 
 class VIXDevicesPanel(Screen):
 	skin = """
@@ -241,6 +243,7 @@ class VIXDevicesPanel(Screen):
 		self.session.openWithCallback(self.updateList, VIXDevicePanelConf, self.menu_path)
 
 	def Mount(self):
+		if len(self['list'].list) < 1: return
 		sel = self['list'].getCurrent()
 		if sel:
 			des = sel[1]
@@ -248,16 +251,112 @@ class VIXDevicesPanel(Screen):
 			parts = des.strip().split('\t')
 			mountp = parts[1].replace(_("Mount: "), '')
 			device = parts[2].replace(_("Device: "), '')
-			system('mount ' + device)
-			mountok = False
-			f = open('/proc/mounts', 'r')
+			moremount = sel[1]
+			adv_title = moremount != "" and _("Warning, this device is used for more than one mount point!\n") or ""
+			if device != '':
+				devicemount = device[-5:]
+				curdir = '/media%s' % (devicemount)
+				mountlist = [
+				(_("Mount current device from the fstab"), self.MountCur3),
+				(_("Mount current device to %s") % (curdir), self.MountCur2),
+				(_("Mount all device from the fstab"), self.MountCur1),
+				]
+				self.session.openWithCallback(
+				self.menuCallback,
+				ChoiceBox,
+				list = mountlist,
+				title= adv_title + _("Select mount action for %s:") % device,
+				)
+
+	def menuCallback(self, ret = None):
+		ret and ret[1]()				
+			
+	def MountCur3(self):
+		sel = self['list'].getCurrent()
+		if sel:
+			parts = sel[1].split()
+			self.device = parts[5]
+			self.mountp = parts[3]
+			des = sel[1]
+			des = des.replace('\n', '\t')
+			parts = des.strip().split('\t')
+			device = parts[2].replace(_("Device: "), '')
+			try:
+				f = open('/proc/mounts', 'r')
+			except IOError:
+				return
 			for line in f.readlines():
-				if line.find(device) != -1:
-					mountok = True
+				if line.find(device) != -1 and '/omb' not in line:
+					self.session.open(MessageBox, _("The device is already mounted!"), MessageBox.TYPE_INFO, timeout=5)
+					f.close()
+					return
 			f.close()
-			if not mountok:
-				self.session.open(MessageBox, _("The mount failed, completely restart the receiver to reassemble it, or press the green button (setup mounts) to mount as /media/hdd../media/usb..."), MessageBox.TYPE_INFO, timeout=20)
-			self.updateList()
+			self.mbox = self.session.open(MessageBox, _("Please wait..."), MessageBox.TYPE_INFO)
+			system('mount ' + device)
+			self.Console = Console()
+			self.Console.ePopen("/sbin/blkid | grep " + self.device, self.cur_in_fstab, [self.device, self.mountp])
+
+	def MountCur1(self):
+		if len(self['list'].list) < 1: return
+		system('mount -a')
+		self.updateList()
+
+	def MountCur2(self):
+		sel = self['list'].getCurrent()
+		if sel:
+			des = sel[1]
+			des = des.replace('\n', '\t')
+			parts = des.strip().split('\t')
+			device = parts[2].replace(_("Device: "), '')
+			try:
+				f = open('/proc/mounts', 'r')
+			except IOError:
+				return
+			for line in f.readlines():
+				if line.find(device) != -1 and '/omb' not in line:
+					f.close()
+					self.session.open(MessageBox, _("The device is already mounted!"), MessageBox.TYPE_INFO, timeout=5)
+					return
+			f.close()
+			if device != '':
+				devicemount = device[-5:]
+				mountdir = '/media/%s' % (devicemount)
+				if not os.path.exists(mountdir):
+					os.mkdir(mountdir, 0755)
+				system ('mount ' + device + ' /media/%s' % (devicemount))
+				mountok = False
+				f = open('/proc/mounts', 'r')
+				for line in f.readlines():
+					if line.find(device) != -1 and '/omb' not in line:
+						mountok = True
+				f.close()
+				if not mountok:
+					self.session.open(MessageBox, _("The mount failed, completely restart the receiver to reassemble it, or press the green button (setup mounts) to mount as /media/hdd../media/usb..."), MessageBox.TYPE_ERROR, timeout=20)
+				self.updateList()
+
+	def cur_in_fstab(self, result = None, retval = None, extra_args = None):
+		self.device = extra_args[0]
+		self.mountp = extra_args[1]
+		self.device_uuid_tmp = result.split('UUID=')
+		if str(self.device_uuid_tmp) != "['']":
+			try:
+				self.device_uuid_tmp = self.device_uuid_tmp[1].replace('TYPE="ext2"','').replace('TYPE="ext3"','').replace('TYPE="ext4"','').replace('TYPE="ntfs"','').replace('TYPE="exfat"','').replace('TYPE="vfat"','').replace('"','')
+				self.device_uuid_tmp = self.device_uuid_tmp.replace('\n',"")
+				self.device_uuid = 'UUID=' + self.device_uuid_tmp
+				system ('mount ' + self.device_uuid)
+				mountok = False
+				f = open('/proc/mounts', 'r')
+				for line in f.readlines():
+					if line.find(self.device) != -1 and '/omb' not in line:
+						mountok = True
+				f.close()
+				if not mountok:
+					self.session.open(MessageBox, _("Mount current device failed!\nMaybe this device is not spelled out in the fstab?"), MessageBox.TYPE_ERROR, timeout=8)
+			except:
+				pass
+		if self.mbox:
+			self.mbox.close()
+		self.updateList()				
 
 	def Unmount(self):
 		if len(self['list'].list) < 1: return

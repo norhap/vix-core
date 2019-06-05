@@ -256,7 +256,7 @@ class VIXDevicesPanel(Screen):
 					mountok = True
 			f.close()
 			if not mountok:
-				self.session.open(MessageBox, _("The mount failed, completely restart the receiver to reassemble it, or press the green key (setup mounts) to mount as /media/hdd../media/usb..."), MessageBox.TYPE_INFO, timeout=20)
+				self.session.open(MessageBox, _("The mount failed, completely restart the receiver to reassemble it, or press the green button (setup mounts) to mount as /media/hdd../media/usb..."), MessageBox.TYPE_INFO, timeout=20)
 			self.updateList()
 
 	def Unmount(self):
@@ -270,7 +270,7 @@ class VIXDevicesPanel(Screen):
 			device = parts[2].replace(_("Device: "), '')
 			print mountp
 			if mountp == _("None"): return
-			message = _('Really unmount ') + device + _(" from ") +  mountp + " ?"
+			message = _("Really unmount drive ?")
 			self.session.openWithCallback(self.UnmountAnswer, MessageBox, message, MessageBox.TYPE_YESNO)
 
 	def UnmountAnswer(self, answer):

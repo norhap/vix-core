@@ -1074,3 +1074,25 @@ msgstr ""
 
 msgid "Really unmount drive ?"
 msgstr "Realmente quieres desmontar la unidad ?"
+
+msgid "Mount current device from the fstab"
+msgstr "Montar dispositivo actual desde el fstab"
+
+msgid "Mount current device to %s"
+msgstr "Volver a su montaje anterior %s"
+
+msgid "Mount all device from the fstab"
+msgstr "Montar todos los dispositivos desde el fstab"
+
+msgid "Select mount action for %s:"
+msgstr "Seleccione la acción de montaje para %s:"
+
+msgid "The device is already mounted!"
+msgstr "El dispositivo ya está montado!"
+
+msgid ""
+"Mount current device failed!\n"
+"Maybe this device is not spelled out in the fstab?"
+msgstr ""
+"El dispositivo de montaje actual falló!\n"
+"Tal vez este dispositivo no está escrito en el fstab?"

@@ -463,7 +463,7 @@ msgid "Mount manager"
 msgstr "Administrador de montajes"
 
 msgid "The mount failed, completely restart the receiver to reassemble it, or press the green button (setup mounts) to mount as /media/hdd../media/usb..."
-msgstr "Falló el montaje, reinicie completamente el receptor para volver a montarlo o presione la tecla verde (configurar montajes) para montar como /media/hdd../media/usb...etc."
+msgstr "Falló el montaje, reinicie completamente el receptor para volver a montarlo o presione botón verde (configurar montajes) para montar como /media/hdd../media/usb...etc."
 
 msgid "Mount: "
 msgstr "Montar: "

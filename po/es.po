@@ -1051,7 +1051,7 @@ msgid "Can't unmount partiton, make sure it is not being used for swap or record
 msgstr "No se puede desmontar la partición, asegúrese de que no se esté utilizando para swap o grabar/timeshift en rutas!"
 
 msgid "Warning, this device is used for more than one mount point!\n"
-msgstr "Atención, este dispositivo se usa para más de un punto de montaje!\n"
+msgstr "Atención, elija las opciones de montaje para este dispositivo!\n"
 
 msgid "Really use and mount %s as HDD ?"
 msgstr "Realmente usar y montar %s como HDD?"

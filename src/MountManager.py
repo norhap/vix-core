@@ -565,10 +565,10 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			device2 = re.sub('[0-9]', '', device)
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
 		if devicetype.find('mmc') != -1 and (devicetype.find('rdb') != -1 or (devicetype.find('soc') != -1 and  getMachineBuild() not in ("h9", "i55plus", "h9combo", "u5pvr"))):
-			return
+			    return
 		if  SystemInfo["HasSDnomount"]:											# h9/i55 use mmcblk0p[0-3] for sdcard, h9combo uses mmcblk1p[0-3]
 			if SystemInfo["HasSDnomount"][0] == 'Yes' and "%s" %SystemInfo["HasSDnomount"][1] in device:
-				return
+				    return
 		d2 = device
 		name = _("HARD DISK: ")
 		if path.exists(resolveFilename(SCOPE_ACTIVE_SKIN, "vixcore/dev_hdd.png")):

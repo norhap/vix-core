@@ -435,20 +435,20 @@ msgstr "Please enter a folder that contains some packages."
 msgid "Please select device to use as swapfile location"
 msgstr "Please select device to use as swapfile location"
 
-msgid "Please select the file to restore ?"
-msgstr "Por favor, seleccione el archivo para restaurar?"
+msgid "Please select the file to restore."
+msgstr "Por favor, seleccione el archivo para restaurar."
 
-msgid "Please wait while gathers information..."
+msgid "Please wait while the system gathers information..."
 msgstr "Por favor espere mientras recopila información ..."
 
 msgid "Please wait while plugins restore completes..."
 msgstr "Por favor, espere mientras se completa la restauración de complementos ..."
 
 msgid "Please wait while restore prepares"
-msgstr "Please wait while restore prepares"
+msgstr "Por favor espere mientras se prepara la restauración"
 
 msgid "Please wait while settings restore completes..."
-msgstr "Por favor, espere mientras se completa la restauración de configuración ..."
+msgstr "Por favor, espere mientras se completa la restauración de configuración..."
 
 msgid "Please wait while starting\n"
 msgstr "Please wait while starting\n"
@@ -497,7 +497,7 @@ msgid "Restore Confirmation"
 msgstr "Restore Confirmation"
 
 msgid "Restore Wizard"
-msgstr "Restore Wizard"
+msgstr "Asistente de Restauración"
 
 msgid "Restoring backup..."
 msgstr "Restoring backup..."
@@ -623,8 +623,8 @@ msgstr "Sorry, no physical devices that supports SWAP attached. Can't create Swa
 msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 msgstr "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 
-msgid "Start"
-msgstr "Start"
+msgid "start"
+msgstr "iniciar"
 
 msgid "Starting..."
 msgstr "Starting..."
@@ -659,8 +659,8 @@ msgstr "The backup location does not have enough freespace."
 msgid "The chosen location does not exist, using /media/hdd"
 msgstr "The chosen location does not exist, using /media/hdd"
 
-msgid "The wizard is finished now, and will reboot"
-msgstr "El asistente ya ha finalizado, el Receptor va a Reiniciar"
+msgid "The wizard is finished now, and will reboot."
+msgstr "El asistente ya ha finalizado, el Receptor va a Reiniciar."
 
 msgid "The wizard is finished now."
 msgstr "The wizard is finished now."
@@ -734,7 +734,7 @@ msgid ""
 "Welcome to the restore wizard.\n"
 "\n"
 "A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"You can use this wizard to restore your settings and any extra plugins that were installed when the backup was created.\n"
 msgstr ""
 "Bienvenido al asistente de restauración.\n"
 "\n"

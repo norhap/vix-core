@@ -735,8 +735,8 @@ msgstr "Ojo: no hay ningún dispositivo conectado que soporte intercambio. No se
 msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 msgstr "Ojo: no se ha encontrado suficiente RAM libre y no hay ningún dispositivo conectado que soporte intercambio"
 
-msgid "start"
-msgstr "iniciar"
+msgid "Start"
+msgstr "Iniciar"
 
 msgid "Starting..."
 msgstr "Iniciando..."

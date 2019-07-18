@@ -496,7 +496,7 @@ msgstr "Restore"
 msgid "Restore Confirmation"
 msgstr "Restore Confirmation"
 
-msgid "Restore Wizard"
+msgid "Restore wizard"
 msgstr "Asistente de Restauración"
 
 msgid "Restoring backup..."
@@ -623,8 +623,8 @@ msgstr "Sorry, no physical devices that supports SWAP attached. Can't create Swa
 msgid "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 msgstr "Sorry, not enough free ram found, and no physical devices that supports SWAP attached. Can't create Swapfile on network or fat32 filesystems, unable to make backup"
 
-msgid "start"
-msgstr "iniciar"
+msgid "Start"
+msgstr "Iniciar"
 
 msgid "Starting..."
 msgstr "Starting..."

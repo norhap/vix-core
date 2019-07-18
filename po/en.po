@@ -246,10 +246,10 @@ msgid "Disable Startup"
 msgstr "Disable Startup"
 
 msgid "Do you want to restore your Enigma2 plugins ?"
-msgstr "Do you want to restore your Enigma2 plugins ?"
+msgstr "¿Quieres restaurar sus plugins Enigma2?"
 
 msgid "Do you want to restore your Enigma2 settings ?"
-msgstr "Do you want to restore your Enigma2 settings ?"
+msgstr "¿Quieres restaurar su configuración Enigma2?"
 
 msgid "Download"
 msgstr "Download"
@@ -276,7 +276,7 @@ msgid "Enough Retries, delaying till next schedule."
 msgstr "Enough Retries, delaying till next schedule."
 
 msgid "Exit the restore wizard"
-msgstr "Exit the restore wizard"
+msgstr "Salir del asistente de restauración"
 
 msgid "Extra IPK's"
 msgstr "Extra IPK's"
@@ -372,10 +372,10 @@ msgid "Moving to Backup Location..."
 msgstr "Moving to Backup Location..."
 
 msgid "NO, do not restore plugins"
-msgstr "NO, do not restore plugins"
+msgstr "NO, no restaurar complementos"
 
 msgid "NO, do not restore settings"
-msgstr "NO, do not restore settings"
+msgstr "NO, no restaurar la copia de seguridad"
 
 msgid "New Backup"
 msgstr "New Backup"
@@ -424,7 +424,7 @@ msgid "OK"
 msgstr "OK"
 
 msgid "OK, to perform a restore"
-msgstr "OK, to perform a restore"
+msgstr "OK, para realizar una restauración"
 
 msgid "Please copy the folder"
 msgstr "Please copy the folder"
@@ -436,19 +436,19 @@ msgid "Please select device to use as swapfile location"
 msgstr "Please select device to use as swapfile location"
 
 msgid "Please select the file to restore ?"
-msgstr "Please select the file to restore ?"
+msgstr "Por favor, seleccione el archivo para restaurar?"
 
 msgid "Please wait while gathers information..."
-msgstr "Please wait while gathers information..."
+msgstr "Por favor espere mientras recopila información ..."
 
 msgid "Please wait while plugins restore completes..."
-msgstr "Please wait while plugins restore completes..."
+msgstr "Por favor, espere mientras se completa la restauración de complementos ..."
 
 msgid "Please wait while restore prepares"
 msgstr "Please wait while restore prepares"
 
 msgid "Please wait while settings restore completes..."
-msgstr "Please wait while settings restore completes..."
+msgstr "Por favor, espere mientras se completa la restauración de configuración ..."
 
 msgid "Please wait while starting\n"
 msgstr "Please wait while starting\n"
@@ -660,7 +660,7 @@ msgid "The chosen location does not exist, using /media/hdd"
 msgstr "The chosen location does not exist, using /media/hdd"
 
 msgid "The wizard is finished now, and will reboot"
-msgstr "The wizard is finished now, and will reboot"
+msgstr "El asistente ya ha finalizado, el Receptor va a Reiniciar"
 
 msgid "The wizard is finished now."
 msgstr "The wizard is finished now."
@@ -736,16 +736,16 @@ msgid ""
 "A backup has been detected.\n"
 "You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
 msgstr ""
-"Welcome to the restore wizard.\n"
+"Bienvenido al asistente de restauración.\n"
 "\n"
-"A backup has been detected.\n"
-"You can use this wizard to restore your setting and any extra plugins that where installed when the backup was created.\n"
+"Se ha detectado una copia de seguridad.\n"
+"Puede usar este asistente para restaurar su configuración y cualquier complemento adicional que se haya instalado cuando se creó la copia de seguridad.\n"
 
 msgid "YES, to restore plugins"
-msgstr "YES, to restore plugins"
+msgstr "SI, restaurar los plugins"
 
 msgid "YES, to restore settings"
-msgstr "YES, to restore settings"
+msgstr "SI, restaurar la copia de seguridad"
 
 msgid "You have no backup to delete."
 msgstr "You have no backup to delete."

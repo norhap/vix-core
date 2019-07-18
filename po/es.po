@@ -472,10 +472,10 @@ msgid "Moving to backup Location..."
 msgstr "Moviendo al destino de copias..."
 
 msgid "NO, do not restore plugins"
-msgstr "No restaurar complementos"
+msgstr "NO, no restaurar complementos"
 
 msgid "NO, do not restore settings"
-msgstr "No restaurar la configuración"
+msgstr "NO, no restaurar configuraciones"
 
 msgid "New backup"
 msgstr "Nueva copia configuración"
@@ -530,7 +530,7 @@ msgid "OK"
 msgstr "OK"
 
 msgid "OK, to perform a restore"
-msgstr "Sí, restaurar"
+msgstr "OK, para realizar una restauración"
 
 msgid "Please copy the folder"
 msgstr "Por favor copia la carpeta"

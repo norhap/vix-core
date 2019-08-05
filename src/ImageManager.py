@@ -85,15 +85,15 @@ def ImageManagerautostart(reason, session=None, **kwargs):
 
 class VIXImageManager(Screen):
 	skin = """<screen name="VIXImageManager" position="center,center" size="560,400">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/green.png" position="140,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/yellow.png" position="280,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/blue.png" position="420,0" size="140,40" alphatest="on"/>
 		<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1"/>
 		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1"/>
 		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1"/>
 		<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1"/>
-		<ePixmap pixmap="skin_default/buttons/key_menu.png" position="0,40" size="35,25" alphatest="blend" transparent="1" zPosition="3"/>
+		<ePixmap pixmap="buttons/key_menu.png" position="0,40" size="35,25" alphatest="blend" transparent="1" zPosition="3"/>
 		<widget name="lab1" position="0,50" size="560,50" font="Regular; 18" zPosition="2" transparent="0" halign="center"/>
 		<widget name="list" position="10,105" size="540,260" scrollbarMode="showOnDemand"/>
 		<widget name="backupstatus" position="10,370" size="400,30" font="Regular;20" zPosition="5"/>
@@ -475,7 +475,7 @@ class VIXImageManager(Screen):
 		if SystemInfo["RecoveryMode"]:
 			self.restore_infobox = self.session.open(MessageBox, _("Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart." %getMachineMake()), MessageBox.TYPE_INFO, timeout=180, enable_input=False)
 		else:
-			self.restore_infobox = self.session.open(MessageBox, _("Please wait while the flash prepares."), MessageBox.TYPE_INFO, timeout=180, enable_input=False)
+			self.restore_infobox = self.session.open(MessageBox, _("Please wait while the flash prepares."), MessageBox.TYPE_INFO, timeout=240, enable_input=False)
 		self.TEMPDESTROOT = self.BackupDirectory + 'imagerestore'
 		if self.sel.endswith('.zip'):
 			if not path.exists(self.TEMPDESTROOT):
@@ -714,10 +714,10 @@ class AutoImageManagerTimer:
 class ImageBackup(Screen):
 	skin = """
 	<screen name="VIXImageManager" position="center,center" size="560,400">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/green.png" position="140,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/yellow.png" position="280,0" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/blue.png" position="420,0" size="140,40" alphatest="on"/>
 		<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1"/>
 		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1"/>
 		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1"/>
@@ -1388,10 +1388,10 @@ class ImageBackup(Screen):
 class ImageManagerDownload(Screen):
 	skin = """
 	<screen name="VIXImageManager" position="center,center" size="560,400">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphatest="on" />
+		<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" alphatest="on" />
+		<ePixmap pixmap="buttons/green.png" position="140,0" size="140,40" alphatest="on" />
+		<ePixmap pixmap="buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
+		<ePixmap pixmap="buttons/blue.png" position="420,0" size="140,40" alphatest="on" />
 		<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
 		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
 		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />

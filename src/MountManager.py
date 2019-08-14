@@ -157,9 +157,9 @@ class VIXDevicesPanel(Screen):
 		else:
 			device2 = re.sub('[0-9]', '', device)
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
-		if devicetype.find('mmc') != -1 and (devicetype.find('rdb') != -1 or (devicetype.find('soc') != -1 and  getMachineBuild() not in ("h9", "i55plus", "h9combo", "u5pvr"))):
+		if devicetype.find('mmc') != -1 and (devicetype.find('rdb') != -1 or (devicetype.find('soc') != -1 and  getMachineBuild() not in ("h9", "i55plus", "h9combo", "u5pvr", "u53"))):
 			return
-		if  getMachineBuild() in ("h9", "i55plus", "h9combo", "u5pvr") and "mmcblk0" in device:
+		if  getMachineBuild() in ("h9", "i55plus", "h9combo", "u5pvr", "u53") and "mmcblk0" in device:
 			return
 		d2 = device
 		name = _("HARD DISK: ")
@@ -563,9 +563,9 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		else:
 			device2 = re.sub('[0-9]', '', device)
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
-		if devicetype.find('mmc') != -1 and (devicetype.find('rdb') != -1 or (devicetype.find('soc') != -1 and  getMachineBuild() not in ("h9", "i55plus", "h9combo", "u5pvr"))):
+		if devicetype.find('mmc') != -1 and (devicetype.find('rdb') != -1 or (devicetype.find('soc') != -1 and  getMachineBuild() not in ("h9", "i55plus", "h9combo", "u5pvr", "u53"))):
 			return
-		if  getMachineBuild() in ("h9", "i55plus", "h9combo", "u5pvr") and "mmcblk0" in device:
+		if  getMachineBuild() in ("h9", "i55plus", "h9combo", "u5pvr", "u53") and "mmcblk0" in device:
 			return
 		d2 = device
 		name = _("HARD DISK: ")

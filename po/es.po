@@ -282,7 +282,7 @@ msgstr "Deseleccionar"
 msgid "Device: "
 msgstr "Dispositivo: "
 
-msgid "Device: None available"
+msgid "Device: none available"
 msgstr "Dispositivo: ninguno disponible"
 
 msgid "Disable startup"

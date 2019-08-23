@@ -1096,3 +1096,6 @@ msgid ""
 msgstr ""
 "El dispositivo de montaje actual falló!\n"
 "Tal vez este dispositivo no está escrito en el fstab?"
+
+msgid "There is a problem with this device. Please reformat it and try again."
+msgstr "Hay un problema con este dispositivo. Vuelva a formatearlo e intente nuevamente."

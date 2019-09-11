@@ -1150,5 +1150,3 @@ msgstr "Espere mientras se prepara el flash, después de que la imagen se muestr
 
 msgid "Select an image to download for %s:"
 msgstr "Seleccione una imagen para descargar para% s:"
-
-

@@ -644,9 +644,6 @@ msgstr "Seleccione la copia a restaurar:"
 msgid "Select a package to install:"
 msgstr "Selecciona el IPK que quieres instalar:"
 
-msgid "Select an image to download:"
-msgstr "Selecciona la imagen que quieres descargar:"
-
 msgid "Select an image to restore:"
 msgstr "Seleccione la imagen a restaurar:"
 
@@ -785,9 +782,6 @@ msgstr "No hay copia de seguridad para restaurar."
 
 msgid "There is no image to delete."
 msgstr "No hay imagen para borrar."
-
-msgid "There is no image to download."
-msgstr "No hay imagen para descargar."
 
 msgid "There is no image to flash."
 msgstr "No hay imagen para flashear."
@@ -1099,3 +1093,62 @@ msgstr ""
 
 msgid "There is a problem with this device. Please reformat it and try again."
 msgstr "Hay un problema con este dispositivo. Vuelva a formatearlo e intente nuevamente."
+
+msgid "'User' url has not been specified, please use MENU button to initialise"
+msgstr "La URL del 'usuario' no se ha especificado, utilice el botón MENÚ para inicializar"
+
+msgid "Compress"
+msgstr "Comprimir"
+
+msgid "Do you want to change download url"
+msgstr "Quieres cambiar la URL de descarga"
+
+msgid "DownLoad"
+msgstr "Descargar"
+
+msgid "Expand"
+msgstr "Expandir"
+
+msgid "Http url for OpenATV Images"
+msgstr "Url http para imágenes OpenATV"
+
+msgid "Http url for OpenPli Images"
+msgstr "Url http para imágenes OpenPLi"
+
+msgid "Http url for OpenViX Images"
+msgstr "Url http para imágenes OpenVIX"
+
+msgid "Http url for User Images"
+msgstr "Url http para imágenes de usuarios"
+
+msgid "Image Version %s"
+msgstr "Imagen Versión %s"
+
+msgid "ImageLib_ATV"
+msgstr "ImagenLib_ATV"
+
+msgid "ImageLib_Pli"
+msgstr "ImagenLib_Pli"
+
+msgid "ImageLib_User"
+msgstr "ImagenLib_Usuario"
+
+msgid "ImageLib_ViX"
+msgstr "ImagenLib_ViX"
+
+msgid "Multiboot manager - SDcard initialization run, please restart your Image."
+msgstr "Administrador de arranque múltiple: inicialización de la tarjeta SD, inicie su receptor."
+
+msgid "Multiboot manager - to use this routine %s image must be at OpenViX 4.2.043 or later and USB flashed - reply Yes to continue"
+msgstr "Administrador de arranque múltiple: para usar esta rutina, la imagen% s debe estar en OpenViX 4.2.043 o posterior y USB flasheado: responda Sí para continuar"
+
+msgid "No images found for selected download server...if password check validity"
+msgstr "No se encontraron imágenes para el servidor de descarga seleccionado ... si la contraseña verifica la validez"
+
+msgid "Please wait while the flash prepares, after the image is flashed, your %s will restart - if error please use Recovery mode to restart."
+msgstr "Espere mientras se prepara el flash, después de que la imagen se muestre, su% s se reiniciará; si se produce un error, use el modo de recuperación para reiniciar."
+
+msgid "Select an image to download for %s:"
+msgstr "Seleccione una imagen para descargar para% s:"
+
+

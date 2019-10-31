@@ -3,46 +3,49 @@ from boxbranding import getBoxType, getImageType, getImageDistro, getImageVersio
 from os import path, stat, system, mkdir, makedirs, listdir, remove, rename, statvfs, chmod, walk, symlink, unlink
 from shutil import rmtree, move, copy, copyfile
 from time import localtime, time, strftime, mktime
+import urllib, urllib2, json
 
 from enigma import eTimer, fbClass
 
 from . import _, PluginLanguageDomain
 import Components.Task
 from Components.ActionMap import ActionMap
-from Components.Label import Label
 from Components.Button import Button
-from Components.MenuList import MenuList
+from Components.ChoiceList import ChoiceList, ChoiceEntryComponent
 from Components.config import config, ConfigSubsection, ConfigYesNo, ConfigSelection, ConfigText, ConfigNumber, NoSave, ConfigClock
+from Components.Console import Console
 from Components.Harddisk import harddiskmanager, getProcMounts
+from Components.Label import Label
+from Components.MenuList import MenuList
 from Components.Sources.StaticText import StaticText
 from Components.SystemInfo import SystemInfo
+from Screens.Console import Console as ScreenConsole
+from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Setup import Setup
-from Components.Console import Console
-from Screens.Console import Console as ScreenConsole
-from Screens.TaskView import JobView
-from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
-from Tools.Notifications import AddPopupWithCallback
+from Screens.TaskView import JobView
+from Tools.BoundFunction import boundFunction
 from Tools.Directories import fileExists, fileCheck, pathExists, fileHas
 import Tools.CopyFiles
-from Tools.Multiboot import GetImagelist, GetCurrentImage, GetCurrentKern, GetCurrentRoot
-from Components.ChoiceList import ChoiceList, ChoiceEntryComponent
 from Tools.HardwareInfo import HardwareInfo
-import urllib, urllib2, json
+from Tools.Multiboot import GetImagelist, GetCurrentImage, GetCurrentKern, GetCurrentRoot
+from Tools.Notifications import AddPopupWithCallback
 
 RAMCHEKFAILEDID = 'RamCheckFailedNotification'
 
-hddchoises = []
+hddchoices = []
 for p in harddiskmanager.getMountedPartitions():
 	if path.exists(p.mountpoint):
 		d = path.normpath(p.mountpoint)
-		if p.mountpoint != '/':
-			hddchoises.append((p.mountpoint, d))
+		if SystemInfo["canMultiBoot"] and SystemInfo["canMultiBoot"][2] in d:
+				continue
+		elif p.mountpoint != '/':
+			hddchoices.append((p.mountpoint, d))
 config.imagemanager = ConfigSubsection()
 defaultprefix = getImageDistro() + '-' + getBoxType()
 config.imagemanager.folderprefix = ConfigText(default=defaultprefix, fixed_size=False)
-config.imagemanager.backuplocation = ConfigSelection(choices=hddchoises)
+config.imagemanager.backuplocation = ConfigSelection(choices=hddchoices)
 config.imagemanager.schedule = ConfigYesNo(default=False)
 config.imagemanager.scheduletime = ConfigClock(default=0)  # 1:00
 config.imagemanager.repeattype = ConfigSelection(default="daily", choices=[("daily", _("Daily")), ("weekly", _("Weekly")), ("monthly", _("30 Days"))])
@@ -133,6 +136,7 @@ class VIXImageManager(Screen):
 		self["key_red"] = Button(_("Delete"))
 
 		self.BackupRunning = False
+		self.BackupDirectory = " "
 		if SystemInfo["canMultiBoot"]:
 			self.mtdboot = "%s1" % SystemInfo["canMultiBoot"][2]
 	 		if SystemInfo["canMultiBoot"][2] == "sda":
@@ -196,6 +200,8 @@ class VIXImageManager(Screen):
 			self["list"].instance.moveSelection(self["list"].instance.moveDown)
 
 	def refreshList(self):
+		if self.BackupDirectory == " ":
+			return
 		images = listdir(self.BackupDirectory)
 		self.oldlist = images
 		del self.emlist[:]
@@ -219,47 +225,18 @@ class VIXImageManager(Screen):
 		Components.Task.job_manager.in_background = in_background
 
 	def populate_List(self):
-		imparts = []
-		for p in harddiskmanager.getMountedPartitions():
-			if path.exists(p.mountpoint):
-				d = path.normpath(p.mountpoint)
-				if p.mountpoint != '/':
-					imparts.append((p.mountpoint, d))
-		config.imagemanager.backuplocation.setChoices(imparts)
-
 		if config.imagemanager.backuplocation.value.endswith('/'):
 			mount = config.imagemanager.backuplocation.value, config.imagemanager.backuplocation.value[:-1]
 		else:
 			mount = config.imagemanager.backuplocation.value + '/', config.imagemanager.backuplocation.value
 		hdd = '/media/hdd/', '/media/hdd'
-		if mount not in config.imagemanager.backuplocation.choices.choices:
-			if hdd in config.imagemanager.backuplocation.choices.choices:
-				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "HelpActions"],
-											  {
-											  'cancel': self.close,
-											  'red': self.keyDelete,
-											  'green': self.GreenPressed,
-											  'yellow': self.doDownload,
-											  'blue': self.keyRestore,
-											  "menu": self.createSetup,
-											  "up": self.refreshUp,
-											  "down": self.refreshDown,
-											  "displayHelp": self.doDownload,
-											  'ok': self.keyRestore,
-											  }, -1)
-
-				self.BackupDirectory = '/media/hdd/imagebackups/'
-				config.imagemanager.backuplocation.value = '/media/hdd/'
-				config.imagemanager.backuplocation.save()
-				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd.") + "\n" + _("Select an image to flash:"))
-			else:
-				self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions"],
+		if mount not in config.imagemanager.backuplocation.choices.choices and hdd not in config.imagemanager.backuplocation.choices.choices:
+			self['myactions'] = ActionMap(["OkCancelActions", "MenuActions"],
 											  {
 											  'cancel': self.close,
 											  "menu": self.createSetup,
 											  }, -1)
-
-				self['lab1'].setText(_("Device: None available") + "\n" + _("Select an image to flash:"))
+			self['lab1'].setText(_("Device: None available") + "\n" + _("Press 'Menu' to select a storage device"))
 		else:
 			self['myactions'] = ActionMap(['ColorActions', 'OkCancelActions', 'DirectionActions', "MenuActions", "HelpActions"],
 										  {
@@ -267,27 +244,32 @@ class VIXImageManager(Screen):
 										  'red': self.keyDelete,
 										  'green': self.GreenPressed,
 										  'yellow': self.doDownload,
-										  'blue': self.keyRestore,
 										  "menu": self.createSetup,
+										  "ok": self.keyRestore,
+										  'blue': self.keyRestore,
 										  "up": self.refreshUp,
 										  "down": self.refreshDown,
 										  "displayHelp": self.doDownload,
-										  'ok': self.keyRestore,
 										  }, -1)
-
-			self.BackupDirectory = config.imagemanager.backuplocation.value + 'imagebackups/'
-			s = statvfs(config.imagemanager.backuplocation.value)
-			free = (s.f_bsize * s.f_bavail) / (1024 * 1024)
-			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + ' ' + _('Free space:') + ' ' + str(free) + _('MB') + "\n" + _("Select an image to flash:"))
-		try:
-			if not path.exists(self.BackupDirectory):
-				mkdir(self.BackupDirectory, 0755)
-			if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + getImageType() + '-swapfile_backup'):
-				system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + getImageType() + '-swapfile_backup')
-				remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + getImageType() + '-swapfile_backup')
-			self.refreshList()
-		except:
-			self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + "\n" + _("Hay un problema con este dispositivo. Por favor reformatealo y vuelve a intentarlo."))
+			if mount not in config.imagemanager.backuplocation.choices.choices:
+				self.BackupDirectory = '/media/hdd/imagebackups/'
+				config.imagemanager.backuplocation.value = '/media/hdd/'
+				config.imagemanager.backuplocation.save()
+				self['lab1'].setText(_("The chosen location does not exist, using /media/hdd.") + "\n" + _("Select an image to flash:"))
+			else:
+				self.BackupDirectory = config.imagemanager.backuplocation.value + 'imagebackups/'
+				s = statvfs(config.imagemanager.backuplocation.value)
+				free = (s.f_bsize * s.f_bavail) / (1024 * 1024)
+				self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + ' ' + _('Free space:') + ' ' + str(free) + _('MB') + "\n" + _("Select an image to flash:"))
+			try:
+				if not path.exists(self.BackupDirectory):
+					mkdir(self.BackupDirectory, 0755)
+				if path.exists(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + getImageType() + '-swapfile_backup'):
+					system('swapoff ' + self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + getImageType() + '-swapfile_backup')
+					remove(self.BackupDirectory + config.imagemanager.folderprefix.value + '-' + getImageType() + '-swapfile_backup')
+				self.refreshList()
+			except:
+				self['lab1'].setText(_("Device: ") + config.imagemanager.backuplocation.value + "\n" + _("Hay un problema con este dispositivo. Por favor reformatealo y vuelve a intentarlo."))
 
 	def createSetup(self):
 		self.session.openWithCallback(self.setupDone, Setup, 'viximagemanager', 'SystemPlugins/ViX', self.menu_path, PluginLanguageDomain)
@@ -399,7 +381,7 @@ class VIXImageManager(Screen):
 		self.HasSDmmc = False
 		self.multibootslot = 1
 		self.MTDKERNEL = getMachineMtdKernel()
-		self.MTDROOTFS = getMachineMtdRoot()	
+		self.MTDROOTFS = getMachineMtdRoot()
 		if getMachineMake() == 'et8500' and path.exists('/proc/mtd'):
 			self.dualboot = self.dualBoot()
 		recordings = self.session.nav.getRecordings()
@@ -459,7 +441,7 @@ class VIXImageManager(Screen):
 						self.MTDROOTFS = "%s" %(self.imagelist[retval]['part'])
 					else:
 						self.MTDKERNEL = getMachineMtdKernel()
-						self.MTDROOTFS = getMachineMtdRoot()					
+						self.MTDROOTFS = getMachineMtdRoot()
 			if self.sel:
 				if config.imagemanager.autosettingsbackup.value:
 					self.doSettingsBackup()
@@ -521,7 +503,7 @@ class VIXImageManager(Screen):
 					CMD = "/usr/bin/ofgwrite -r%s -k%s '%s'" % (self.MTDROOTFS, self.MTDKERNEL, MAINDEST)
  			elif SystemInfo["HasHiSi"]:
 				CMD = "/usr/bin/ofgwrite -r%s -k%s '%s'" % (self.MTDROOTFS, self.MTDKERNEL, MAINDEST)
-			elif SystemInfo["HasH9SD"]: 
+			elif SystemInfo["HasH9SD"]:
 				if  fileHas("/proc/cmdline", "root=/dev/mmcblk0p1") is True and fileExists("%s/rootfs.tar.bz2" %MAINDEST):
 					CMD = "/usr/bin/ofgwrite -rmmcblk0p1 '%s'" % (MAINDEST)
 				elif fileExists("%s/rootfs.ubi" %MAINDEST) and fileExists("%s/rootfs.tar.bz2" %MAINDEST):
@@ -780,7 +762,7 @@ class ImageBackup(Screen):
 				self.MTDKERNEL = "%s%s" %(SystemInfo["canMultiBoot"][2], kern)
 				self.MTDROOTFS = "%s%s" %(SystemInfo["canMultiBoot"][2], root)
 				self.ROOTFSSUBDIR = "linuxrootfs%s" %self.rootdir
-			else:					
+			else:
 				self.addin = SystemInfo["canMultiBoot"][0]
 				self.MTDKERNEL = "%s%s" %(SystemInfo["canMultiBoot"][2], kernel*2 +self.addin -1)
 				self.MTDROOTFS = "%s%s" %(SystemInfo["canMultiBoot"][2], kernel*2 +self.addin)
@@ -852,7 +834,7 @@ class ImageBackup(Screen):
 		task = Components.Task.ConditionTask(job, _("Backing up eMMC partitions for USB flash..."), timeoutCount=900)
 		task.check = lambda: self.Stage3Completed
 		task.weighting = 15
-	
+
 		task = Components.Task.PythonTask(job, _("Removing temp mounts..."))
 		task.work = self.doBackup4
 		task.weighting = 5
@@ -1015,7 +997,7 @@ class ImageBackup(Screen):
 			self.commands.append('mount --bind / %s/root' % self.TMPDIR)
 			if getMachineBuild() in ("h9","i55plus"):
 				z = open('/proc/cmdline', 'r').read()
-				if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z: 
+				if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z:
 					self.ROOTFSTYPE = "tar.bz2"
 					self.commands.append("/bin/tar -cf %s/rootfs.tar -C %s/root --exclude ./var/nmbd --exclude ./.resizerootfs --exclude ./.resize-rootfs --exclude ./.resize-linuxrootfs --exclude ./.resize-userdata --exclude ./var/lib/samba/private/msg.sock ." % (self.WORKDIR, self.TMPDIR))
 					self.commands.append("/usr/bin/bzip2 %s/rootfs.tar" % self.WORKDIR)
@@ -1101,7 +1083,7 @@ class ImageBackup(Screen):
 			self.commandMB.append('parted -s %s unit KiB mkpart linuxkernel4 %s %s' % (EMMC_IMAGE, FOURTH_KERNEL_PARTITION_OFFSET, PARTED_END_KERNEL4 ))
 			try:
 				rd = open("/proc/swaps", "r").read()
-				if "mmcblk0p7" in rd: 
+				if "mmcblk0p7" in rd:
 					SWAP_PARTITION_OFFSET = int(FOURTH_KERNEL_PARTITION_OFFSET) + int(KERNEL_PARTITION_SIZE)
 					SWAP_PARTITION_SIZE = int(262144)
 					MULTI_ROOTFS_PARTITION_OFFSET = int(SWAP_PARTITION_OFFSET) + int(SWAP_PARTITION_SIZE)
@@ -1125,7 +1107,7 @@ class ImageBackup(Screen):
 			IMAGE_ROOTFS_ALIGNMENT=1024
 			BOOT_PARTITION_SIZE=3072
 			KERNEL_PARTITION_SIZE=8192
-			ROOTFS_PARTITION_SIZE=1898496				
+			ROOTFS_PARTITION_SIZE=1898496
 			EMMC_IMAGE_SIZE=7634944
 			KERNEL_PARTITION_OFFSET = int(IMAGE_ROOTFS_ALIGNMENT) + int(BOOT_PARTITION_SIZE)
 			ROOTFS_PARTITION_OFFSET = int(KERNEL_PARTITION_OFFSET) + int(KERNEL_PARTITION_SIZE)
@@ -1184,7 +1166,7 @@ class ImageBackup(Screen):
 			f.write('<Part Sel="1" PartitionName="rootfs" FlashType="emmc" FileSystem="ext3/4" Start="98M" Length="7000M" SelectFile="rootfs.ext4"/>\n')
 			f.write('</Partition_Info>\n')
 			f.close()
-			print '[ImageManager] Trio4K sf8008: Executing', '/usr/bin/mkupdate -s 00000003-00000001-01010101 -f %s/emmc_partitions.xml -d %s/%s' % (self.WORKDIR,self.WORKDIR,self.EMMCIMG) 
+			print '[ImageManager] Trio4K sf8008: Executing', '/usr/bin/mkupdate -s 00000003-00000001-01010101 -f %s/emmc_partitions.xml -d %s/%s' % (self.WORKDIR,self.WORKDIR,self.EMMCIMG)
 			self.commandMB.append('echo " "')
 			self.commandMB.append('echo "Create: fastboot dump"')
 			self.commandMB.append("dd if=/dev/mmcblk0p1 of=%s/fastboot.bin" % self.WORKDIR)
@@ -1260,7 +1242,7 @@ class ImageBackup(Screen):
 			system('cp -f /usr/share/fastboot.bin %s/fastboot.bin' %(self.MAINDEST2))
 			system('cp -f /usr/share/bootargs.bin %s/bootargs.bin' %(self.MAINDEST2))
 			z = open('/proc/cmdline', 'r').read()
-			if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z: 
+			if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z:
 				move('%s/rootfs.tar.bz2' % self.WORKDIR, '%s/rootfs.tar.bz2' % (self.MAINDEST))
 			else:
 				move('%s/rootfs.%s' % (self.WORKDIR, self.ROOTFSTYPE), '%s/%s' % (self.MAINDEST, self.ROOTFSFILE))
@@ -1304,13 +1286,13 @@ class ImageBackup(Screen):
 			if path.exists('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/burn.bat'):
 				copy('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/burn.bat', self.MAINDESTROOT + '/burn.bat')
 		elif SystemInfo["HasRootSubdir"]:
-				fileout = open(self.MAINDEST + '/force_%s_READ.ME' %self.MCBUILD, 'w')  
+				fileout = open(self.MAINDEST + '/force_%s_READ.ME' %self.MCBUILD, 'w')
 				line1 = "Rename the unforce_%s.txt to force_%s.txt and move it to the root of your usb-stick" %(self.MCBUILD, self.MCBUILD)
-				line2 = "When you enter the recovery menu then it will force the image to be installed in the linux selection" 
+				line2 = "When you enter the recovery menu then it will force the image to be installed in the linux selection"
 				fileout.write(line1)
 				fileout.write(line2)
 				fileout.close()
-				fileout = open(self.MAINDEST2 + '/unforce_%s.txt' %self.MCBUILD, 'w') 
+				fileout = open(self.MAINDEST2 + '/unforce_%s.txt' %self.MCBUILD, 'w')
 				line1 = 'rename this unforce_%s.txt to force_%s.txt to force an update without confirmation' %(self.MCBUILD, self.MCBUILD)
 				fileout.write(line1)
 				fileout.close()
@@ -1457,9 +1439,9 @@ class ImageManagerDownload(Screen):
 			model = getMachineMake()
 		imagecat = [6.0]
 		self.urlb = self.urli+self.boxtype+'/'
-		
+
 		if "atv" in self.urli:
-			imagecat = [6.2,6.3]
+			imagecat = [6.2,6.3, 6.4]
 		elif "www.openvix" in self.urli:
 			imagecat = [5.3]
 
@@ -1527,7 +1509,7 @@ class ImageManagerDownload(Screen):
 				self.setIndex = 0
 			self.SelectionChanged()
 		else:
-			return 
+			return
 
 	def SelectionChanged(self):
 		currentSelected = self["list"].l.getCurrentSelection()

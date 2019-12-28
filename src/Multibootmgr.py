@@ -132,15 +132,17 @@ class MultiBoot(Screen):
 
 	def erase(self):
 		self.currentSelected = self["config"].l.getCurrentSelection()
+		if self.currentSelected == None:
+			return
 		if self.currentSelected[0][1] != "Queued":
 			if SystemInfo["HasRootSubdir"]:
 				message = _("Removal of this slot will not show in %s Gui.  Are you sure you want to delete image slot %s ?" %(getMachineBuild(), self.currentSelected[0][1]))
 				ybox = self.session.openWithCallback(self.doErase, MessageBox, message, MessageBox.TYPE_YESNO, default=True)
 				ybox.setTitle(_("Remove confirmation"))
 			else:
-				message = _("Are you sure you want to delete image slot %s ?" %self.currentSelected[0][1])
+				message = _("Seguro que deseas eliminar la imagen slot %s ?" %self.currentSelected[0][1])
 				ybox = self.session.openWithCallback(self.doErase, MessageBox, message, MessageBox.TYPE_YESNO, default=True)
-				ybox.setTitle(_("Remove confirmation"))
+				ybox.setTitle(_("Confirmar Eliminar imagen"))
 
 	def doErase(self, answer):
 		if answer is True:
@@ -171,7 +173,7 @@ class MultiBoot(Screen):
 			if "GB" in des:
 				print "Multibootmgr1", des, "%s" %des[6], size
 				if size/1024 < 6:
-					print "Multibootmgr2", des, "%s" %des[6], size/1024 
+					print "Multibootmgr2", des, "%s" %des[6], size/1024
 					self.session.open(MessageBox, _("Multiboot manager - The SDcard must be at least 8MB."), MessageBox.TYPE_INFO, timeout=10)
 					self.close
 				else:
@@ -199,7 +201,7 @@ class MultiBoot(Screen):
 					cmdlist.append("parted -s /dev/%s unit KiB mkpart kernel3 ext2 %s %s"%(sda,PARTED_START_KERNEL3,PARTED_END_KERNEL3))
 					cmdlist.append("parted -s /dev/%s unit KiB mkpart rootfs3 ext4 %s %s "%(sda,PARTED_START_ROOTFS3,PARTED_END_ROOTFS3))
 					cmdlist.append("parted -s /dev/%s unit KiB mkpart userdata ext4 %s 100%% "%(sda,PARTED_END_ROOTFS3))  ### Tech note: should be 95% for new mSD cards with discard"
-					cmdlist.append("for n in /dev/%s{1..5} ; do mkfs.ext4 $n ; done"%sda)  ###  we should do kernels in ext2, but ok for small kernel partitions 
+					cmdlist.append("for n in /dev/%s{1..5} ; do mkfs.ext4 $n ; done"%sda)  ###  we should do kernels in ext2, but ok for small kernel partitions
 					cmdlist.append("partprobe /dev/%s"%sda)
 					self.session.open(Console, title = self.TITLE, cmdlist = cmdlist, closeOnSuccess = True)
 			else:

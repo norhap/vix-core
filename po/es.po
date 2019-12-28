@@ -1150,3 +1150,9 @@ msgstr "Espere mientras se prepara el flash, después de que la imagen se muestr
 
 msgid "Select an image to download for %s:"
 msgstr "Seleccione una imagen para descargar para% s:"
+
+msgid "Note: slot list does not show current image or empty slots."
+msgstr "Nota: la lista de slots no muestra la imagen actual o las ranuras vacías."
+
+msgid "slot%s - %s (current image)"
+msgstr "slot%s - %s (imagen actual)"

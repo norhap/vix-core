@@ -14,8 +14,8 @@ self.buildList(self.selectedAction)
     </step>
 
     <step id="settingsquestion">
-        <text value="Desea restaurar la configuración de Enigma2 ?"/>
-        <displaytext value="Desea restaurar la configuración de Enigma2 ?"/>
+        <text value="Desea restaurar la configuracion de Enigma2 ?"/>
+        <displaytext value="Desea restaurar la configuracion de Enigma2 ?"/>
         <list type="dynamic" source="listAction2" evaluation="ActionSelectionMade" onselect="ActionSelectionMoved"/>
         <code>
 self.clearSelectedKeys()

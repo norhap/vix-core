@@ -115,10 +115,10 @@ class VIXSoftcamManager(Screen):
 									  'menu': self.createSetup,
 									  }, -1)
 
-		self["key_red"] = Button(_("Close"))
-		self["key_green"] = Button("")
-		self["key_yellow"] = Button("")
-		self["key_blue"] = Button(_("Autostart"))
+		self["key_red"] = StaticText(_("Close"))
+		self["key_green"] = StaticText("")
+		self["key_yellow"] = StaticText("")
+		self["key_blue"] = StaticText("")
 
 		self.currentactivecam = ""
 		self.activityTimer = eTimer()

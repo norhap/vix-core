@@ -1,6 +1,6 @@
 # for localized messages
 from boxbranding import getMachineBrand, getMachineName, getMachineBuild
-from os import system, rename, path, mkdir, remove, statvfs
+from os import system, rename, path, mkdir, remove
 from time import sleep
 import re
 
@@ -18,6 +18,7 @@ from Components.config import config, getConfigListEntry, ConfigSelection, NoSav
 from Components.Console import Console
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
+from Components.Harddisk import Harddisk
 from Components.SystemInfo import SystemInfo
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import SCOPE_ACTIVE_SKIN, resolveFilename, pathExists
@@ -213,9 +214,7 @@ class VIXDevicesPanel(Screen):
 			# 		rw = _("None")
 			# 		break
 		f.close()
-		stat = statvfs(d1)
-		cap = int(stat.f_blocks * stat.f_bsize)
-		size = cap / 1000 / 1000
+		size = Harddisk(device).diskSize()
 
 		if ((float(size) / 1024) / 1024) >= 1:
 			des = _("Size: ") + str(round(((float(size) / 1024) / 1024), 2)) + _("TB")
@@ -268,8 +267,8 @@ class VIXDevicesPanel(Screen):
 				)
 
 	def menuCallback(self, ret = None):
-		ret and ret[1]()				
-			
+		ret and ret[1]()
+
 	def MountCur3(self):
 		sel = self['list'].getCurrent()
 		if sel:
@@ -355,7 +354,7 @@ class VIXDevicesPanel(Screen):
 				pass
 		if self.mbox:
 			self.mbox.close()
-		self.updateList()				
+		self.updateList()
 
 	def Unmount(self):
 		if len(self['list'].list) < 1: return
@@ -603,9 +602,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 				dtype = parts[2]
 				break
 		f.close()
-		stat = statvfs(d1)
-		cap = int(stat.f_blocks * stat.f_bsize)
-		size = cap / 1000 / 1000
+		size = Harddisk(device).diskSize()
 		if ((float(size) / 1024) / 1024) >= 1:
 			des = _("Size: ") + str(round(((float(size) / 1024) / 1024), 2)) + _("TB")
 		elif (size / 1024) >= 1:

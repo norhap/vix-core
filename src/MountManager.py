@@ -1,6 +1,6 @@
 # for localized messages
 from boxbranding import getMachineBrand, getMachineName, getMachineBuild
-from os import system, rename, path, mkdir, remove
+from os import system, rename, path, mkdir, remove, statvfs
 from time import sleep
 import re
 
@@ -18,7 +18,6 @@ from Components.config import config, getConfigListEntry, ConfigSelection, NoSav
 from Components.Console import Console
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
-from Components.Harddisk import Harddisk
 from Components.SystemInfo import SystemInfo
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import SCOPE_ACTIVE_SKIN, resolveFilename, pathExists
@@ -157,11 +156,17 @@ class VIXDevicesPanel(Screen):
 		else:
 			device2 = re.sub('[0-9]', '', device)
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
+		print '[MountManager1]MachineBuild: ',getMachineBuild()
+		print '[MountManager1]DEVICETYPE:',devicetype
+		print '[MountManager1]TEST TYPE mmc:',devicetype.find('mmc')
+		print '[MountManager1]TEST TYPE rdb/SDHC:',devicetype.find('rdb')
+		print '[MountManager1]TEST TYPE soc:',devicetype.find('soc')
 		if devicetype.find('mmc') != -1 and (devicetype.find('rdb') != -1 or (devicetype.find('soc') != -1 and  getMachineBuild() not in ("h9", "i55plus", "h9combo", "u5pvr", "u53"))):
 			return
 		if  getMachineBuild() in ("h9", "i55plus", "h9combo", "u5pvr", "u53") and "mmcblk0" in device:
 			return
 		d2 = device
+		print '[MountManager1]DEVICE D2:',d2
 		name = _("HARD DISK: ")
 		if path.exists(resolveFilename(SCOPE_ACTIVE_SKIN, "vixcore/dev_hdd.png")):
 			mypixmap = resolveFilename(SCOPE_ACTIVE_SKIN, "vixcore/dev_hdd.png")
@@ -186,6 +191,7 @@ class VIXDevicesPanel(Screen):
 			else:
 				mypixmap = '/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/dev_sd.png'
 		name += model
+		print '[MountManager1] device= %s, name = %s' %(device, name)
 		# self.Console.ePopen("sfdisk -l /dev/sd? | grep swap | awk '{print $(NF-9)}' >/tmp/devices.tmp")
 		# sleep(0.5)
 		# f = open('/tmp/devices.tmp', 'r')
@@ -196,6 +202,7 @@ class VIXDevicesPanel(Screen):
 		# swapdevices = swapdevices.replace('\n', '')
 		# swapdevices = swapdevices.split('/')
 		f = open('/proc/mounts', 'r')
+		print '[MountManager1] /proc/mounts: = %s' %f
 		d1 = _("None")
 		dtype = _("unavailable")
 		rw = _("None")
@@ -205,6 +212,7 @@ class VIXDevicesPanel(Screen):
 				d1 = parts[1]
 				dtype = parts[2]
 				rw = parts[3]
+				print '[MountManager1] device =%s, parts=%s,d1= %s, dtype= %s, rw=%s' %(device, parts, d1, dtype, rw)
 				break
 			# else:
 			# 	if device in swapdevices:
@@ -214,16 +222,21 @@ class VIXDevicesPanel(Screen):
 			# 		rw = _("None")
 			# 		break
 		f.close()
-		size = Harddisk(device).diskSize()
-
-		if ((float(size) / 1024) / 1024) >= 1:
-			des = _("Size: ") + str(round(((float(size) / 1024) / 1024), 2)) + _("TB")
-		elif (size / 1024) >= 1:
-			des = _("Size: ") + str(round((float(size) / 1024), 2)) + _("GB")
-		elif size >= 1:
-			des = _("Size: ") + str(size) + _("MB")
-		else:
+		if d1 == _("None") or d1 == None:
 			des = _("Size: ") + _("unavailable")
+		else:
+			stat = statvfs(d1)
+			cap = int(stat.f_blocks * stat.f_bsize)
+			size = cap / 1000 / 1000
+
+			if ((float(size) / 1024) / 1024) >= 1:
+				des = _("Size: ") + str(round(((float(size) / 1024) / 1024), 2)) + _("TB")
+			elif (size / 1024) >= 1:
+				des = _("Size: ") + str(round((float(size) / 1024), 2)) + _("GB")
+			elif size >= 1:
+				des = _("Size: ") + str(size) + _("MB")
+			else:
+				des = _("Size: ") + _("unavailable")
 
 		if des != '':
 			if rw.startswith('rw'):
@@ -563,11 +576,17 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 		else:
 			device2 = re.sub('[0-9]', '', device)
 		devicetype = path.realpath('/sys/block/' + device2 + '/device')
+		print '[MountManager2]MachineBuild: ',getMachineBuild()
+		print '[MountManager2]DEVICETYPE:',devicetype
+		print '[MountManager2]TEST TYPE mmc:',devicetype.find('mmc')
+		print '[MountManager2]TEST TYPE rdb:',devicetype.find('rdb')
+		print '[MountManager2]TEST TYPE soc:',devicetype.find('soc')
 		if devicetype.find('mmc') != -1 and (devicetype.find('rdb') != -1 or (devicetype.find('soc') != -1 and  getMachineBuild() not in ("h9", "i55plus", "h9combo", "u5pvr", "u53"))):
 			return
 		if  getMachineBuild() in ("h9", "i55plus", "h9combo", "u5pvr", "u53") and "mmcblk0" in device:
 			return
 		d2 = device
+		print '[MountManager2]DEVICE D2:',d2
 		name = _("HARD DISK: ")
 		if path.exists(resolveFilename(SCOPE_ACTIVE_SKIN, "vixcore/dev_hdd.png")):
 			mypixmap = resolveFilename(SCOPE_ACTIVE_SKIN, "vixcore/dev_hdd.png")
@@ -592,6 +611,7 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 			else:
 				mypixmap = '/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/dev_sd.png'
 		name += model
+		print '[MountManager2] device= %s, name = %s' %(device, name)
 		d1 = _("None")
 		dtype = _("unavailable")
 		f = open('/proc/mounts', 'r')
@@ -602,15 +622,20 @@ class VIXDevicePanelConf(Screen, ConfigListScreen):
 				dtype = parts[2]
 				break
 		f.close()
-		size = Harddisk(device).diskSize()
-		if ((float(size) / 1024) / 1024) >= 1:
-			des = _("Size: ") + str(round(((float(size) / 1024) / 1024), 2)) + _("TB")
-		elif (size / 1024) >= 1:
-			des = _("Size: ") + str(round((float(size) / 1024), 2)) + _("GB")
-		elif size >= 1:
-			des = _("Size: ") + str(size) + _("MB")
-		else:
+		if d1 == _("None") or d1 == None:
 			des = _("Size: ") + _("unavailable")
+		else:
+			stat = statvfs(d1)
+			cap = int(stat.f_blocks * stat.f_bsize)
+			size = cap / 1000 / 1000
+			if ((float(size) / 1024) / 1024) >= 1:
+				des = _("Size: ") + str(round(((float(size) / 1024) / 1024), 2)) + _("TB")
+			elif (size / 1024) >= 1:
+				des = _("Size: ") + str(round((float(size) / 1024), 2)) + _("GB")
+			elif size >= 1:
+				des = _("Size: ") + str(size) + _("MB")
+			else:
+				des = _("Size: ") + _("unavailable")
 
 		item = NoSave(ConfigSelection(default='/media/' + device, choices=[('/media/' + device, '/media/' + device),
 																		   ('/media/hdd', '/media/hdd'),

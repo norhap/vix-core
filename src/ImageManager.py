@@ -963,7 +963,7 @@ class ImageBackup(Screen):
 			self.commands.append('mount --bind / %s/root' % self.TMPDIR)
 			if getMachineBuild() in ("h9","i55plus"):
 				with open('/proc/cmdline', 'r').read() as z:
-					if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z: 
+					if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z:
 						self.ROOTFSTYPE = "tar.bz2"
 						self.commands.append("/bin/tar -cf %s/rootfs.tar -C %s/root --exclude ./var/nmbd --exclude ./.resizerootfs --exclude ./.resize-rootfs --exclude ./.resize-linuxrootfs --exclude ./.resize-userdata --exclude ./var/lib/samba/private/msg.sock ." % (self.WORKDIR, self.TMPDIR))
 						self.commands.append("/usr/bin/bzip2 %s/rootfs.tar" % self.WORKDIR)
@@ -1049,7 +1049,7 @@ class ImageBackup(Screen):
 			self.commandMB.append('parted -s %s unit KiB mkpart linuxkernel4 %s %s' % (EMMC_IMAGE, FOURTH_KERNEL_PARTITION_OFFSET, PARTED_END_KERNEL4 ))
 			try:
 				with open("/proc/swaps", "r").read() as rd:
-					if "mmcblk0p7" in rd: 
+					if "mmcblk0p7" in rd:
 						SWAP_PARTITION_OFFSET = int(FOURTH_KERNEL_PARTITION_OFFSET) + int(KERNEL_PARTITION_SIZE)
 						SWAP_PARTITION_SIZE = int(262144)
 						MULTI_ROOTFS_PARTITION_OFFSET = int(SWAP_PARTITION_OFFSET) + int(SWAP_PARTITION_SIZE)
@@ -1208,7 +1208,7 @@ class ImageBackup(Screen):
 			system('cp -f /usr/share/fastboot.bin %s/fastboot.bin' %(self.MAINDEST2))
 			system('cp -f /usr/share/bootargs.bin %s/bootargs.bin' %(self.MAINDEST2))
 			with open('/proc/cmdline', 'r').read() as z:
-				if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z: 
+				if SystemInfo["HasMMC"] and "root=/dev/mmcblk0p1" in z:
 					move('%s/rootfs.tar.bz2' % self.WORKDIR, '%s/rootfs.tar.bz2' % (self.MAINDEST))
 				else:
 					move('%s/rootfs.%s' % (self.WORKDIR, self.ROOTFSTYPE), '%s/%s' % (self.MAINDEST, self.ROOTFSFILE))
@@ -1249,12 +1249,12 @@ class ImageBackup(Screen):
 			if path.exists('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/burn.bat'):
 				copy('/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/burn.bat', self.MAINDESTROOT + '/burn.bat')
 		elif SystemInfo["HasRootSubdir"]:
-				with open(self.MAINDEST + '/force_%s_READ.ME' %self.MCBUILD, 'w') as fileout: 
+				with open(self.MAINDEST + '/force_%s_READ.ME' %self.MCBUILD, 'w') as fileout:
 					line1 = "Rename the unforce_%s.txt to force_%s.txt and move it to the root of your usb-stick" %(self.MCBUILD, self.MCBUILD)
-					line2 = "When you enter the recovery menu then it will force the image to be installed in the linux selection" 
+					line2 = "When you enter the recovery menu then it will force the image to be installed in the linux selection"
 					fileout.write(line1)
 					fileout.write(line2)
-				with open(self.MAINDEST2 + '/unforce_%s.txt' %self.MCBUILD, 'w') as fileout: 
+				with open(self.MAINDEST2 + '/unforce_%s.txt' %self.MCBUILD, 'w') as fileout:
 					line1 = 'rename this unforce_%s.txt to force_%s.txt to force an update without confirmation' %(self.MCBUILD, self.MCBUILD)
 					fileout.write(line1)
 

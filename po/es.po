@@ -934,8 +934,8 @@ msgid "Your %s %s is not connected to the internet, Please try using Backup Mana
 msgstr "Su %s %s no está conectado a Internet. Intente usar el Administrador de copia de seguridad para restaurar los complementos más tarde."
 
 #, python-format
-msgid "Your %s %s is not connected to the internet, please check your network settings and try again."
-msgstr "Su %s %s no está conectado a Internet, verifique la configuración de su red y vuelva a intentarlo."
+msgid "Your %s %s is not connected to the Internet. Please try using Backup manager to restore plugins later."
+msgstr "Su %s %s no está conectado a Internet. Intente usar el Administrador de copia de seguridad para restaurar los complementos más adelante."
 
 msgid "echo 'Downloading Image.'"
 msgstr "echo 'Descargando Imagen.'"
@@ -1152,3 +1152,21 @@ msgstr "Nota: la lista de slots no muestra la imagen actual o las ranuras vacía
 
 msgid "slot%s - %s (current image)"
 msgstr "slot%s - %s (imagen actual)"
+
+msgid "Sorry the feeds are down for maintenance. Please try using Backup manager to restore plugins later."
+msgstr "Lo sentimos, los feeds no funcionan por alguna razón. Intente usar el Administrador de copia de seguridad para restaurar los complementos más adelante."
+
+msgid "A background update check is in progress, please try again."
+msgstr "Existe un chequeo de actualización en progreso en segundo plano. Vuelva a intentarlo más tarde."
+
+msgid "Your %s %s is not connected to a network. Please try using the Backup manager to restore plugins later when a network connection is available."
+msgstr "Su %s %s no está conectado a una red. Intente utilizar el Administrador de copia de seguridad para restaurar complementos más adelante cuando haya una conexión de red disponible."
+
+msgid "Your %s %s could not connect to the plugin feeds at this time. Please try using the Backup manager to restore plugins later."
+msgstr "Su %s %s is no se pudo conectar a los feeds de complementos en este momento. Intente usar el Administrador de copia de seguridad para restaurar los complementos más adelante."
+
+msgid "Your %s %s is not connected to the Internet. Please try using the Backup manager to restore plugins later."
+msgstr "Su %s %s is no está conectado a internet Intente usar el Administrador de copia de seguridad para restaurar los complementos más adelante."
+
+msgid "Sorry the feeds are down for maintenance. Please try using the Backup manager to restore plugins later."
+msgstr "Lo sentimos, los feeds no funcionan por alguna razón. Intente usar el Administrador de copia de seguridad para restaurar los complementos más adelante."

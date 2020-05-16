@@ -70,8 +70,6 @@ class VIXMenu(Screen, ProtectedScreen):
 			self.list.append(("Administrador de Montajes", _("Mount manager"), _("Manage your devices mount points."), None))
 			self.list.append(("Ejecutar Scripts", _("Script runner"), _("Run your shell scripts."), None))
 			self.list.append(("Administrador SWAP", _("SWAP manager"), _("Create and Manage your SWAP files."), None))
-			if SystemInfo["canMultiBoot"]:
-				self.list.append(("Administrador Multiboot", _("MultiBoot manager"), _("Create empty slot."), None))
  			if SystemInfo["HasH9SD"]:
 				self.list.append(("Administrador H9SDcard", _("H9SDcard Manager"), _("Move Nand root to SD card"), None))
 		self["menu"] = List(self.list)
@@ -136,10 +134,7 @@ class VIXMenu(Screen, ProtectedScreen):
 				elif currentEntry == "Administrador de Imagen":
 					from ImageManager import VIXImageManager
 					self.session.open(VIXImageManager, self.menu_path)
-				elif currentEntry == "Administrador Multiboot":
-					from Multibootmgr import MultiBoot
-					self.session.open(MultiBoot, self.menu_path)
-				elif currentEntry == "Administrador H9SDcard":
+				elif currentEntry == "H9SDcard manager":
 					from H9SDmanager import H9SDmanager
 					self.session.open(H9SDmanager, self.menu_path)
 				elif currentEntry == "Instalar IPKG":

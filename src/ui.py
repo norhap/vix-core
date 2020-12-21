@@ -1,14 +1,17 @@
-# for localized messages
+from __future__ import print_function
+
 from os import listdir, path, mkdir
 
 from . import _
-from Screens.Screen import Screen
+
 from Components.ActionMap import NumberActionMap
+from Components.config import config
 from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
-from Screens.ParentalControlSetup import ProtectedScreen
-from Components.config import config
 from Components.SystemInfo import SystemInfo
+from Screens.ParentalControlSetup import ProtectedScreen
+from Screens.Screen import Screen
+
 
 class VIXMenu(Screen, ProtectedScreen):
 	skin = """
@@ -81,7 +84,6 @@ class VIXMenu(Screen, ProtectedScreen):
 
 	def createSummary(self):
 		from Screens.PluginBrowser import PluginBrowserSummary
-
 		return PluginBrowserSummary
 
 	def selectionChanged(self):
@@ -116,7 +118,7 @@ class VIXMenu(Screen, ProtectedScreen):
 					from ImageManager import VIXImageManager
 					self.session.open(VIXImageManager)
 				elif currentEntry == "H9SDcard manager":
-					from H9SDmanager import H9SDmanager
+					from .H9SDmanager import H9SDmanager
 					self.session.open(H9SDmanager)
 				elif currentEntry == "Instalar IPKG":
 					from IPKInstaller import VIXIPKInstaller
